@@ -27,7 +27,7 @@ const CustomComponents = () => {
       <Banner3 />
       <FundraiseCard />
       {/* <Banner4 /> */}
-      <HeaderComponent />
+      {/* <HeaderComponent /> */}
       {/* <BannerComponent />
       <FormBannerComponent />
       <FeatureComponent />
