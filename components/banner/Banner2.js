@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "reactstrap";
 import Image from "next/image";
-import bannerimg from "../../assets/images/landingpage/banner-img.png";
+import bannerimg from "../../assets/images/landingpage/banner-img.webp";
 
 const Banner2 = () => {
   return (

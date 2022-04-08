@@ -4,9 +4,9 @@ import { Row, Col, Container, Card, CardBody } from "reactstrap";
 import Link from "next/link";
 import Image from "next/image";
 import Fundraiser from "../../basic/fundraiser";
-import img1 from "../../../assets/images/portfolio/img7.png";
-import img2 from "../../../assets/images/portfolio/img8.png";
-import img3 from "../../../assets/images/portfolio/img9.png";
+import img1 from "../../../assets/images/portfolio/img7.webp";
+import img2 from "../../../assets/images/portfolio/img8.webp";
+import img3 from "../../../assets/images/portfolio/img9.webp";
 
 const CharityRaisers = () => {
   return (

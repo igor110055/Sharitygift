@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "reactstrap";
 import Image from "next/image";
-import fundraisingimg from "../../assets/images/landingpage/fundraising.png";
+import fundraisingimg from "../../assets/images/landingpage/fundraising.webp";
 import IconCard from "../basic/icon-card";
 
 const Banner3 = () => {

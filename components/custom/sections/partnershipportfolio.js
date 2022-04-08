@@ -4,10 +4,10 @@ import { Row, Col, Container, Card, CardBody } from "reactstrap";
 import Image from "next/image";
 import Link from "next/link";
 import PartnershipCard from "../../basic/partnership-card";
-import img1 from "../../../assets/images/partnership/img1.png";
-import img2 from "../../../assets/images/partnership/img2.png";
-import img3 from "../../../assets/images/partnership/img3.png";
-import img4 from "../../../assets/images/partnership/img4.png";
+import img1 from "../../../assets/images/partnership/img1.webp";
+import img2 from "../../../assets/images/partnership/img2.webp";
+import img3 from "../../../assets/images/partnership/img3.webp";
+import img4 from "../../../assets/images/partnership/img4.webp";
 
 const PartnershipPortfolio = () => {
   return (
