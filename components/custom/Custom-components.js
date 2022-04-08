@@ -22,13 +22,13 @@ import CallToAction from "../../components/call-to-action/CallToAction";
 
 const CustomComponents = () => {
   return (
-    <div style={{paddingTop: 102}}>
+    <div className="p-t-102">
       <Banner2 />
       <Banner3 />
       <FundraiseCard />
-      <Banner4 />
-      {/* <HeaderComponent />
-      <BannerComponent />
+      {/* <Banner4 /> */}
+      <HeaderComponent />
+      {/* <BannerComponent />
       <FormBannerComponent />
       <FeatureComponent />
       <PortfolioComponent />

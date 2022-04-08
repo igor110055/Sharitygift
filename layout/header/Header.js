@@ -50,10 +50,10 @@ const Header = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/basic">
+                  <Link href="/fundraisers">
                     <a
                       className={
-                        router.pathname == "/basic"
+                        router.pathname == "/fundraisers"
                           ? "text-danger nav-link"
                           : "nav-link"
                       }
@@ -63,7 +63,7 @@ const Header = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/basic">
+                  <Link href="/#">
                     <a
                       className={
                         router.pathname == "/basic"
@@ -76,10 +76,10 @@ const Header = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/basic">
+                  <Link href="/partnership">
                     <a
                       className={
-                        router.pathname == "/basic"
+                        router.pathname == "/partnership"
                           ? "text-danger nav-link"
                           : "nav-link"
                       }

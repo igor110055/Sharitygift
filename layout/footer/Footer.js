@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="f4-bottom-bar m-b-10">
           <Row className="justify-content-center m-b-10">
             <Col md="6" className="text-center">
-              <div className="font-14" style={{fontSize: 25}}>
+              <div className="font-25">
                 <div className="round-social light">
                   <Link href="#">
                     <a className="link">

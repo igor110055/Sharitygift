@@ -25,7 +25,7 @@ const Banner2 = () => {
             </a>
             <Link href="/#coming">
               <a className="btn btn-md m-t-30 btn-icon  p-r-0 p-l-0">
-                <i className="fa fal fa-play-circle m-r-10 font-40" /> <span style={{marginTop: 10}}>Watch How It Works</span>
+                <i className="fa fal fa-play-circle m-r-10 font-40" /> <span className="m-t-10">Watch How It Works</span>
               </a>
             </Link>
           </Col>

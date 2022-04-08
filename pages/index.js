@@ -5,12 +5,12 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>NextJs UI kit | Free UI kit built with bootstrap</title>
+        <title>Sharity</title>
         <meta
           name="description"
           content="NextJs UI kit | Free UI kit built with bootstrap"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
       </Head>
       <CustomComponents />

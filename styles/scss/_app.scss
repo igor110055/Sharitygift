@@ -218,6 +218,10 @@ html body {
     padding-left: 20px;
   }
 
+  .p-l-40 {
+    padding-left: 40px;
+  }
+
   .p-r-0 {
     padding-right: 0px;
   }
@@ -239,7 +243,11 @@ html body {
   }
 
   .p-t-0 {
-    padding-top: 0px;
+    padding-top: 0px !important;
+  }
+
+  .p-t-5 {
+    padding-top: 5px !important;
   }
 
   .p-t-10 {
@@ -254,12 +262,16 @@ html body {
     padding-top: 30px;
   }
 
+  .p-t-102 {
+    padding-top: 102px;
+  }
+
   .p-b-0 {
     padding-bottom: 0px;
   }
 
   .p-b-5 {
-    padding-bottom: 5px;
+    padding-bottom: 5px !important;
   }
 
   .p-b-10 {
@@ -286,6 +298,10 @@ Margin
 html body {
   .m-0 {
     margin: 0px;
+  }
+
+  .m-l-0 {
+    margin-left: 0px !important;
   }
 
   .m-l-5 {
@@ -348,6 +364,10 @@ html body {
     margin-top: 10px;
   }
 
+  .m-t-12 {
+    margin-top: 12px;
+  }
+
   .m-t-15 {
     margin-top: 15px;
   }
@@ -366,6 +386,10 @@ html body {
 
   .m-t-60 {
     margin-top: 60px;
+  }
+
+  .m-t-80 {
+    margin-top: 80px;
   }
 
   .m-t-100 {
@@ -491,6 +515,10 @@ html body {
     font-size: 20px;
   }
 
+  .font-25 {
+    font-size: 25px;
+  }
+
   .font-40 {
     font-size: 40px;
   }
@@ -566,6 +594,14 @@ Thumb size
 Text Colors
 *******************/
 
+.text-primary {
+  color: $primary !important;
+}
+
+.text-secondary {
+  color: $secondary !important;
+}
+
 .text-white {
   color: $white !important;
 }
@@ -596,6 +632,10 @@ Text Colors
 
 .text-black {
   color: $black !important;
+}
+
+.text-red {
+  color: red !important;
 }
 
 .text-success-gradiant {
@@ -1028,10 +1068,33 @@ Buttons
 .btn-light {
   color: $white;
   background: $primary;
+  border-color: $primary;
   &:hover {
     background: $white;
     color: $primary;
     border-color: $primary;
+  }
+}
+
+.btn-alternate {
+  color: $white;
+  background: $danger;
+  border-color: $danger;
+  &:hover {
+    background: $white;
+    color: $danger;
+    border-color: $danger;
+  }
+}
+
+.btn-alternate-border {
+  color: $white;
+  background: $danger;
+  border-color: $white;
+  &:hover {
+    background: $white;
+    color: $danger;
+    border-color: $danger;
   }
 }
 
@@ -1689,6 +1752,9 @@ a.btn-outline-success {
 .align-center {
   text-align: center;
 }
+.align-right {
+  text-align: right;
+}
 .onoffswitch-switch {
   display: block;
   width: 23px;
@@ -1795,4 +1861,107 @@ a.btn-outline-success {
   background-size: cover;
   background-position: top 20% center;
   background-image: $c2a-image;
+}
+
+.main-banner {
+  min-height: 360px;
+  overflow: auto;
+  background-size: cover;
+  background-position: top 20% center;
+  background-image: $mb-image;
+}
+
+.top-fundraiser {
+  position: relative;
+}
+
+.donee-location {
+  display: block;
+  position: absolute;
+  bottom: calc(0% + 5px);
+  background: linear-gradient(0deg, rgb(190, 155, 89, 1), rgb(190, 155, 89, .3));
+  width: 100%;
+  height: 45px;
+  vertical-align: middle;
+  line-height: 45px;
+  color: $white;
+  z-index: 3;
+}
+
+.donee-location i {
+  color: $info;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 40px;
+  margin: 1px 18px;
+}
+
+.horizontal-slider {
+  width: 100%;
+  max-width: 500px;
+  height: 1vh;
+}
+.example-thumb {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  z-index: 100;
+  background: $primary;
+  border: 5px solid $primary;
+  border-radius: 100%;
+  display: block;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+}
+.example-thumb.active {
+  background-color: grey;
+}
+.example-track {
+  position: relative;
+  background: lightgrey;
+  border-radius: 5px;
+}
+.example-track.example-track-0 {
+  background: $primary;
+  border-radius: 5px;
+}
+.horizontal-slider .example-track {
+  top: 20px;
+  height: 7px;
+}
+.horizontal-slider .example-thumb {
+  top: 16px;
+  width: 15px;
+  outline: none;
+  height: 15px;
+  color: $primary;
+  line-height: 36px;
+  // border-color: $primary;
+  // border-width: 1px;
+  &:focus,
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+.submenu {
+  background-color: $danger;
+}
+
+.submenu-item {
+  white-space: nowrap;
+  a {
+    color: $white;
+    &:hover,
+    &:focus {
+      color: $primary;
+    }
+  }
+}
+
+.sub-nav {
+  justify-content: end;
+}
+
+.infobar {
+  background-color: $danger;
 }
