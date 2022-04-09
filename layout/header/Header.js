@@ -89,10 +89,10 @@ const Header = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/basic">
+                  <Link href="/resources">
                     <a
                       className={
-                        router.pathname == "/basic"
+                        router.pathname == "/resources"
                           ? "text-danger nav-link"
                           : "nav-link"
                       }

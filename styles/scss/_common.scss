@@ -1537,3 +1537,79 @@ Modal in center
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
 }
+
+.cointag {
+  font-size: 0.8em;
+  border: 1px solid;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: #000!important;
+  margin: 5px;
+  font-weight: 600;
+  line-height: 25px;
+  padding: 10px 15px !important;
+  &:before {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    background-size: 100%;
+    top: 4px;
+    margin-right: 5px;
+  }
+}
+
+.coin-btc {
+  border-color: #f2a900 !important;
+  &:before {
+    content: "";
+    background-image: url('../../assets/images/coins/btc-logo.png');
+  }
+}
+
+.coin-eth {
+  &:before {
+    content: "";
+    background-image: url('../../assets/images/coins/etherium-logo.png');
+  }
+}
+
+.coin-usdc {
+  &:before {
+    content: "";
+    background-image: url('../../assets/images/coins/usd-coin-usdc-logo.png');
+  }
+}
+
+.coin-dai {
+  border-color: #f2a900;
+  &:before {
+    content: "";
+    background-image: url('../../assets/images/coins/dai-logo.png');
+  }
+}
+
+.coin-doge {
+  border-color: #806F2A;
+  &:before {
+    content: "";
+    background-image: url('../../assets/images/coins/doge-logo.png');
+  }
+}
+
+.coin-sol {
+  border-color: #7798D9;
+  &:before {
+    content: "";
+    background-image: url('../../assets/images/coins/solana-sol-logo.png');
+  }
+}
+
+.coin-ape {
+  border-color: #056CF2;
+  &:before {
+    content: "";
+    background-image: url('../../assets/images/coins/APECOIN.png');
+  }
+}

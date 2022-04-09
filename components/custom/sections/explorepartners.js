@@ -2,11 +2,6 @@
 import React from "react";
 import { Row, Col, Container, Card, CardBody, Form, FormGroup, Label, Input, Button  } from "reactstrap";
 import Link from "next/link";
-import Image from "next/image";
-import Fundraiser from "../../basic/fundraiser";
-import img1 from "../../../assets/images/portfolio/img7.png";
-import img2 from "../../../assets/images/portfolio/img8.png";
-import img3 from "../../../assets/images/portfolio/img9.png";
 
 const ExplorePartners = () => {
   return (

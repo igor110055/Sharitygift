@@ -7,8 +7,8 @@ export default function Home() {
       <Head>
         <title>Sharity</title>
         <meta
-          name="description"
-          content="NextJs UI kit | Free UI kit built with bootstrap"
+          name="Sharity"
+          content="Crypto Donation"
         />
         <link rel="icon" href="/favicon.png" />
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />

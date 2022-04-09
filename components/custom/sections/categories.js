@@ -1,24 +1,24 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Image from "next/image";
-import img1 from "../../../assets/images/categories/Medical.png";
-import img2 from "../../../assets/images/categories/Memorial.png";
-import img3 from "../../../assets/images/categories/Emergency.png";
-import img4 from "../../../assets/images/categories/Nonprofit.png";
-import img5 from "../../../assets/images/categories/Education.png";
-import img6 from "../../../assets/images/categories/Animals.png";
-import img7 from "../../../assets/images/categories/Environment.png";
-import img8 from "../../../assets/images/categories/Business.png";
-import img9 from "../../../assets/images/categories/Community.png";
-import img10 from "../../../assets/images/categories/Charitytoken.png";
-import img11 from "../../../assets/images/categories/Creative.png";
-import img12 from "../../../assets/images/categories/Event.png";
-import img13 from "../../../assets/images/categories/Faith.png";
-import img14 from "../../../assets/images/categories/Family.png";
-import img15 from "../../../assets/images/categories/Sports.png";
-import img16 from "../../../assets/images/categories/Travel.png";
-import img17 from "../../../assets/images/categories/Volunteer.png";
-import img18 from "../../../assets/images/categories/Wishes.png";
+import img1 from "../../../assets/images/categories/Medical.jpg";
+import img2 from "../../../assets/images/categories/Memorial.jpg";
+import img3 from "../../../assets/images/categories/Emergency.jpg";
+import img4 from "../../../assets/images/categories/Nonprofit.jpg";
+import img5 from "../../../assets/images/categories/Education.jpg";
+import img6 from "../../../assets/images/categories/Animals.jpg";
+import img7 from "../../../assets/images/categories/Environment.jpg";
+import img8 from "../../../assets/images/categories/Business.jpg";
+import img9 from "../../../assets/images/categories/Community.jpg";
+import img10 from "../../../assets/images/categories/Charitytoken.jpg";
+import img11 from "../../../assets/images/categories/Creative.jpg";
+import img12 from "../../../assets/images/categories/Event.jpg";
+import img13 from "../../../assets/images/categories/Faith.jpg";
+import img14 from "../../../assets/images/categories/Family.jpg";
+import img15 from "../../../assets/images/categories/Sports.jpg";
+import img16 from "../../../assets/images/categories/Travel.jpg";
+import img17 from "../../../assets/images/categories/Volunteer.jpg";
+import img18 from "../../../assets/images/categories/Wishes.jpg";
 
 const Categories = () => {
   return (
