@@ -15,7 +15,7 @@ const FundraiseCard = () => {
         <Container>
             <Row className="justify-content-center m-b-30">
                 <Col md="7" className="text-center">
-                    <h2 className="text-black font-bold">The leader in online fundraising</h2>
+                    <h2 className="text-black font-bold">"Give today for a better tomorrow"</h2>
                 </Col>
             </Row>
         </Container>
@@ -32,7 +32,7 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Worldwide leader</h4>
                 <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    The beauty of crypto is that the currency is universal, it does not change based off of country. You can donate crypto all over the world in minutes!
                 </p>
             </Col>
             <Col lg="4" sm="6" xs="12" className="align-center p-5" >
@@ -46,7 +46,8 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Simple setup</h4>
                 <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    Setting up an account is simple for both donor and organization. Please visit <a href="#"
+                className="">How it works</a> to learn more.
                 </p>
             </Col>
             <Col lg="4" sm="6" xs="12" className="align-center p-5" >
@@ -60,10 +61,10 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Secure</h4>
                 <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    Each donation is secure and protected It's important to donate and accept donations on our direct website to prevent potential scams.
                 </p>
             </Col>
-            <Col lg="4" sm="6" xs="12" className="align-center p-5" >
+            <Col lg="4" sm="6" xs="12" className="align-center p-5" style={{visibility: "hidden"}} >
                 <Image
                 src={img4}
                 width={25}
@@ -88,10 +89,10 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Social reach</h4>
                 <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    Our mission is to bring awareness to your organization be allowing it to be viewed by perspective donors all over the world.
                 </p>
             </Col>
-            <Col lg="4" sm="6" xs="12" className="align-center p-5" >
+            <Col lg="4" sm="6" xs="12" className="align-center p-5" style={{visibility: "hidden"}} >
                 <Image
                 src={img6}
                 width={25}

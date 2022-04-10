@@ -1055,6 +1055,16 @@ Buttons
   }
 }
 
+.btn-home-link {
+  box-shadow: none;
+  color: $white;
+  padding: 10px 15px;
+  display: inline-flex;
+  &:hover {
+    // color: $primary;
+  }
+}
+
 .btn-icon {
   box-shadow: none;
   color: $bodytext;
@@ -1073,6 +1083,28 @@ Buttons
     background: $white;
     color: $primary;
     border-color: $primary;
+  }
+}
+
+.btn-home-primary {
+  color: $white;
+  background: $homeprimary;
+  border-color: $white !important;
+  &:hover {
+    background: $white;
+    color: $homeprimary;
+    border-color: $white !important;
+  }
+}
+
+.btn-home-secondary {
+  color: $white;
+  background: $homesecondary;
+  border-color: $white !important;
+  &:hover {
+    background: $white;
+    color: $homesecondary;
+    border-color: $white !important;
   }
 }
 
@@ -1968,4 +2000,29 @@ a.btn-outline-success {
 
 .subinfobar {
   background-color: $warning;
+}
+
+.home-banner-1 {
+  padding: 30px 50px;
+  background-color: $homeprimary;
+  color: $white !important;
+  box-shadow: 35px -25px 1px rgba(237, 106, 90, 0.6);
+  border-radius: 15px;
+}
+
+.home-banner-2 {
+  padding: 30px 50px;
+  background-color: $homesecondary;
+  color: $white !important;
+  box-shadow: 35px -25px 1px rgba(57, 201, 198, 0.4);
+  border-radius: 15px;
+}
+
+.text-homeprimary {
+  color: $homeprimary !important;
+  margin-bottom: 50px !important;
+}
+
+.description-homeprimary {
+  color: $white !important;
 }
