@@ -31,7 +31,7 @@ const Banner2 = () => {
               </Link>
             </div>
           </Col>
-          <Col lg="6" md="6">
+          <Col lg="6" md="6" className="m-b-40">
             <Image src={bannerimg} alt="sharity banner" />
           </Col>
         </Row>

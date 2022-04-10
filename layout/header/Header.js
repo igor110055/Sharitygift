@@ -37,19 +37,6 @@ const Header = () => {
             >
               <Nav navbar className="ml-auto mr-auto">
                 <NavItem>
-                  <Link href="/">
-                    <a
-                      className={
-                        router.pathname == "/"
-                          ? "text-danger nav-link"
-                          : "nav-link"
-                      }
-                    >
-                      DISCOVER
-                    </a>
-                  </Link>
-                </NavItem>
-                <NavItem>
                   <Link href="/fundraisers">
                     <a
                       className={
@@ -85,6 +72,32 @@ const Header = () => {
                       }
                     >
                       PARTNERSHIP
+                    </a>
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link href="/campaigns">
+                    <a
+                      className={
+                        router.pathname == "/campaigns"
+                          ? "text-danger nav-link"
+                          : "nav-link"
+                      }
+                    >
+                      CAMPAIGN
+                    </a>
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link href="/donors">
+                    <a
+                      className={
+                        router.pathname == "/donors"
+                          ? "text-danger nav-link"
+                          : "nav-link"
+                      }
+                    >
+                      DONORS
                     </a>
                   </Link>
                 </NavItem>

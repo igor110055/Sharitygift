@@ -10,7 +10,7 @@ const Banner3 = () => {
     <div className="static-slider-head banner2">
       <Container>
         <Row className="">
-          <Col lg="6" md="6" className="align-self-center">
+          <Col lg="6" md="6" className="align-self-center m-b-20">
             <h4 className="subcontent font-light" style={{lineHeight: 2}}>
                 Here at <b className="boldcontent">Sharity's Gift</b>, our mission is to make <b className="boldcontent">crypto giving simple</b> while highlighting your organization. We are creating a future where the gift of crypto donations becomes a standard. Our platform provides <b className="boldcontent">convenience</b> for the crypto donor, and a secure <b className="boldcontent">solution</b> for the charity, non profit, or organization to accept crypto donations <b className="boldcontent">safely.</b>
             </h4>
@@ -23,7 +23,7 @@ const Banner3 = () => {
               >here</a> to learn more
             
           </Col>
-          <Col lg="6" md="6">
+          <Col lg="6" md="6" className="m-b-40">
             {/* <Image
               src={fundraisingimg}
               alt="fundraising banner"

@@ -27,12 +27,12 @@ Header 6
 
   .navbar-nav {
     .nav-link {
-      padding: 35px 15px;
+      // padding: 35px 15px;
       color: $danger;
       transition-duration: 0.2s;
       font-family: 'Poppins';
       font-weight: bold;
-      font-size: 15px;
+      font-size: 14px;
       white-space: nowrap;
     }
     .nav-item {
@@ -71,7 +71,7 @@ Header 6
 }
 
 .static-slider-head {
-  min-height: 600px;
+  min-height: 520px;
   display: flex;
 
   background-color: $bodycolor;

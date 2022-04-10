@@ -2003,19 +2003,29 @@ a.btn-outline-success {
 }
 
 .home-banner-1 {
-  padding: 30px 50px;
+  padding: 30px 35px;
   background-color: $homeprimary;
   color: $white !important;
-  box-shadow: 35px -25px 1px rgba(237, 106, 90, 0.6);
+  box-shadow: 15px -15px 1px rgba(237, 106, 90, 0.6);
   border-radius: 15px;
 }
 
 .home-banner-2 {
-  padding: 30px 50px;
+  padding: 30px 35px;
   background-color: $homesecondary;
   color: $white !important;
-  box-shadow: 35px -25px 1px rgba(57, 201, 198, 0.4);
+  box-shadow: 15px -15px 1px rgba(57, 201, 198, 0.4);
   border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .home-banner-1 {
+    padding: 30px 10px;
+    background-color: $homeprimary;
+    color: $white !important;
+    box-shadow: 15px -15px 1px rgba(237, 106, 90, 0.6);
+    border-radius: 15px;
+  }
 }
 
 .text-homeprimary {
