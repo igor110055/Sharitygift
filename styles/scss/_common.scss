@@ -43,7 +43,6 @@ Header 6
       color: $primary;
     }
   }
-
   .act-buttons {
     display: flex;
     white-space: nowrap;
@@ -52,6 +51,17 @@ Header 6
       margin: 10px 0 10px 10px;
     }
   }
+  @media (max-width: 768px){
+    .act-buttons {
+      display: block;
+      white-space: nowrap;
+      margin-left: 14px;
+      .btn {
+        margin: 10px 0 10px 10px;
+      }
+    }
+  }
+  
 }
 
 @media (max-width: 1023px) {
