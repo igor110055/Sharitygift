@@ -91,33 +91,33 @@ h6 {
 
 h1 {
   line-height: 40px;
-  font-size: 36px;
+  font-size: 38px;
 }
 
 h2 {
   line-height: 36px;
-  font-size: 30px;
+  font-size: 32px;
 }
 
 h3 {
   line-height: 30px;
-  font-size: 24px;
+  font-size: 26px;
 }
 
 h4 {
   line-height: 26px;
-  font-size: 21px;
+  font-size: 23px;
 }
 
 h5 {
   line-height: 22px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
 }
 
 h6 {
   line-height: 20px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -1086,7 +1086,7 @@ Buttons
   }
 }
 
-.btn-home-primary {
+.btn-home-primary-light {
   color: $white;
   background: $homeprimary;
   border-color: $white !important;
@@ -1097,7 +1097,7 @@ Buttons
   }
 }
 
-.btn-home-secondary {
+.btn-home-secondary-light {
   color: $white;
   background: $homesecondary;
   border-color: $white !important;
@@ -1105,6 +1105,28 @@ Buttons
     background: $white;
     color: $homesecondary;
     border-color: $white !important;
+  }
+}
+
+.btn-home-primary {
+  color: $white;
+  background: $homeprimary;
+  border-color: $white !important;
+  &:hover {
+    background: $white;
+    color: $homeprimary;
+    border-color: $homeprimary !important;
+  }
+}
+
+.btn-home-secondary {
+  color: $white;
+  background: $homesecondary;
+  border-color: $white !important;
+  &:hover {
+    background: $white;
+    color: $homesecondary;
+    border-color: $homesecondary !important;
   }
 }
 

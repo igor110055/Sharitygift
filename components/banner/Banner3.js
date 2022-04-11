@@ -36,7 +36,7 @@ const Banner3 = () => {
               </h4>
               <a
                 href="#"
-                className="btn btn-home-secondary m-r-40 btn-md m-t-30 "
+                className="btn btn-home-secondary-light m-r-40 btn-md m-t-30 "
               >
                 Partnership
               </a>

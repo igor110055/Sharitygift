@@ -36,7 +36,7 @@ const Header = () => {
               id="h6-info"
             >
               <Nav navbar className="ml-auto mr-auto">
-                <NavItem>
+                {/* <NavItem>
                   <Link href="/fundraisers">
                     <a
                       className={
@@ -48,7 +48,7 @@ const Header = () => {
                       EXPLORE
                     </a>
                   </Link>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <Link href="/#">
                     <a
@@ -63,6 +63,32 @@ const Header = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
+                  <Link href="/#">
+                    <a
+                      className={
+                        router.pathname == "/basic"
+                          ? "text-danger nav-link"
+                          : "nav-link"
+                      }
+                    >
+                      WHY DONATE?
+                    </a>
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link href="/#">
+                    <a
+                      className={
+                        router.pathname == "/basic"
+                          ? "text-danger nav-link"
+                          : "nav-link"
+                      }
+                    >
+                      FAQ
+                    </a>
+                  </Link>
+                </NavItem>
+                {/* <NavItem>
                   <Link href="/partnership">
                     <a
                       className={
@@ -74,8 +100,8 @@ const Header = () => {
                       PARTNERSHIP
                     </a>
                   </Link>
-                </NavItem>
-                <NavItem>
+                </NavItem> */}
+                {/* <NavItem>
                   <Link href="/campaigns">
                     <a
                       className={
@@ -113,12 +139,12 @@ const Header = () => {
                       RESOURCES
                     </a>
                   </Link>
-                </NavItem>
+                </NavItem> */}
               </Nav>
               <div className="act-buttons">
                 <NavLink
                   href="#"
-                  className="btn btn-link font-15"
+                  className="btn btn-link font-16"
                   target="_blank"
                   sm="12"
                   xs="12"
@@ -127,10 +153,15 @@ const Header = () => {
                 </NavLink>
                 <NavLink
                   href="#"
-                  className="btn btn-light font-15"
-                  target="_blank"
+                  className="btn btn-home-primary font-16"
                 >
                   Donate Crypto
+                </NavLink>
+                <NavLink
+                  href="/partnership"
+                  className="btn btn-home-secondary font-16"
+                >
+                  Become a Partner
                 </NavLink>
               </div>
             </Collapse>

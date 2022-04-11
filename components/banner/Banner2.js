@@ -20,7 +20,7 @@ const Banner2 = () => {
               </h4>
               <a
                 href="#"
-                className="btn btn-home-primary m-r-40 btn-md m-t-30 "
+                className="btn btn-home-primary-light m-r-40 btn-md m-t-30 "
               >
                 Donate Crypto
               </a>

@@ -4,9 +4,7 @@ import Image from "next/image";
 import img1 from "../../assets/images/logos/icon-globe.png";
 import img2 from "../../assets/images/logos/icon-gear.png";
 import img3 from "../../assets/images/logos/icon-security.png";
-import img4 from "../../assets/images/logos/icon-mobile.png";
 import img5 from "../../assets/images/logos/icon-social.png";
-import img6 from "../../assets/images/logos/icon-expert.png";
 
 const FundraiseCard = () => {
   return (
@@ -15,7 +13,7 @@ const FundraiseCard = () => {
         <Container>
             <Row className="justify-content-center m-b-30">
                 <Col md="7" className="text-center">
-                    <h2 className="text-black font-bold">&quot;Give today for a better tomorrow&quot;</h2>
+                    <h1 className="text-black font-bold" style={{fontStyle: "italic", fontWeight: "200", letterSpacing: 3}}>&quot;Give today for a better tomorrow&quot;</h1>
                 </Col>
             </Row>
         </Container>
