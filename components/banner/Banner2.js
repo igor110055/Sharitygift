@@ -10,7 +10,7 @@ const Banner2 = () => {
       <Container>
         <Row className="">
           <Col lg="6" md="6" className="align-self-center">
-            <h1 className="title text-homeprimary">
+            <h1 className="title text-homeprimary m-t-0">
             The Presence of giving
             </h1>
             <div className="home-banner-1">

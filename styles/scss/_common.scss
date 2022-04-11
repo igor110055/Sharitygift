@@ -678,13 +678,14 @@ position
 }
 
 .form-control {
-  padding: 0.75rem;
-  border: 2px solid $border;
+  height: 44px;
+  // padding: 0.75rem;
+  // border: 2px solid $border;
 }
 
-select.form-control:not([size]):not([multiple]) {
-  height: calc(2.25rem + 12px);
-}
+// select.form-control:not([size]):not([multiple]) {
+//   height: calc(2.25rem + 12px);
+// }
 
 /*******************
 UI-Elements

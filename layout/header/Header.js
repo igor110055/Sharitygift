@@ -45,7 +45,7 @@ const Header = () => {
                           : "nav-link"
                       }
                     >
-                      FUNDRAISE
+                      EXPLORE
                     </a>
                   </Link>
                 </NavItem>
