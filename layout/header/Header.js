@@ -13,6 +13,10 @@ import {
   NavItem,
   Container,
   NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
 } from "reactstrap";
 import logo from "../../assets/images/logos/newshari.png";
 
@@ -23,7 +27,7 @@ const Header = () => {
 
   const { user, error, isLoading } = useUser();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div></div>;
   if (error) return <div>{error.message}</div>;
   return (
     <div className="topbar" id="top">
@@ -156,14 +160,15 @@ const Header = () => {
                     href="/api/auth/login"
                   >
                     Sign In
-                  </NavLink> : <NavLink
-                    className="btn btn-link font-16"
-                    sm="12"
-                    xs="12"
-                    href="/profile"
-                  >
-                    {user.name}
-                  </NavLink>
+                  </NavLink> : <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav style={{marginTop: 12}}>
+                      {user.name.split('@')[0]} <i className="fa fa-angle-down m-l-5"></i>
+                    </DropdownToggle>
+                    <DropdownMenu className="b-none animated fadeInUp">
+                      <DropdownItem onClick={() => {location.href = '/profile'}}>Profile</DropdownItem>
+                      <DropdownItem onClick={() => {location.href = '/api/auth/logout'}}>Sign Out</DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
                 }
                 <NavLink
                   href="#"
