@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -18,6 +19,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const toggle = () => setIsOpen(!isOpen);
+  // const [session, loading] = useSession();
+  const { data: session, status, loading } = useSession()
   return (
     <div className="topbar" id="top">
       <div className="header6">
@@ -142,15 +145,42 @@ const Header = () => {
                 </NavItem> */}
               </Nav>
               <div className="act-buttons">
-                <NavLink
-                  href="#"
+                {!session && <NavLink
                   className="btn btn-link font-16"
                   target="_blank"
                   sm="12"
                   xs="12"
+                  href="/api/auth/signin"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    signIn();
+                  }}
                 >
                   Sign In
-                </NavLink>
+                </NavLink> }
+                {session && (
+                  <>
+                    <NavLink href="/profile">
+                      <a>
+                        <span
+                          style={{ backgroundImage: `url(${session.user.image})` }}
+                          className="avatar"
+                        />
+                      </a>
+                    </NavLink>
+                    <span className="email">{session.user.email}</span>
+                    <NavLink
+                      href="/api/auth/signout"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        signOut();
+                      }}
+                    >
+                      Sign out
+                    </NavLink>
+                  </>
+                )}
+                
                 <NavLink
                   href="#"
                   className="btn btn-home-primary font-16"
