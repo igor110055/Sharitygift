@@ -20,6 +20,7 @@ export default NextAuth({
   theme: {
     colorScheme: "light",
   },
+  secret:process.env.SECRET,
   callbacks: {
     async jwt({ token }) {
       token.userRole = "admin"
