@@ -1,29 +1,28 @@
-import { useSession } from 'next-auth/react';
+import Head from "next/head";
+import Link from "next/link";
 
-const Profile = () => {
-    
-    const { data: session, status, loading } = useSession();
-    if (loading) return <div>loading...</div>;
-    if (!session) return <div>no session</div>;
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
+export default function Profile({ user }) {
   return (
-    <>
-        <p className="m-b-10"></p>
-      {session && (
-        <>
-          <img src={session.user.image} className="avatar" />
-          <h1>{session.user.name}</h1>
-        </>
-      )}
-
-      <style jsx>{`
-        .avatar {
-          width: 220px;
-          border-radius: 10px;
-        }
-      `}</style>
-    </>
+    <div>
+      <Head>
+        <title>Sharity | Profile</title>
+        <meta
+          name="Sharity"
+          content="Crypto Donation"
+        />
+        <link rel="icon" href="/favicon.png" />
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
+      </Head>
+      <div className="p-t-102">
+        <p className="p-t-20">
+          {user.name}
+        </p>
+      </div>
+      
+    </div>
   );
-};
+}
 
-export default Profile;
+export const getServerSideProps = withPageAuthRequired();

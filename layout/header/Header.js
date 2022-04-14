@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useUser } from '@auth0/nextjs-auth0';
+
 import {
   Collapse,
   Navbar,
@@ -19,8 +20,11 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const toggle = () => setIsOpen(!isOpen);
-  // const [session, loading] = useSession();
-  const { data: session, status, loading } = useSession()
+
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
   return (
     <div className="topbar" id="top">
       <div className="header6">
@@ -145,42 +149,22 @@ const Header = () => {
                 </NavItem> */}
               </Nav>
               <div className="act-buttons">
-                {!session && <NavLink
-                  className="btn btn-link font-16"
-                  target="_blank"
-                  sm="12"
-                  xs="12"
-                  href="/api/auth/signin"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    signIn();
-                  }}
-                >
-                  Sign In
-                </NavLink> }
-                {session && (
-                  <>
-                    <NavLink href="/profile">
-                      <a>
-                        <span
-                          style={{ backgroundImage: `url(${session.user.image})` }}
-                          className="avatar"
-                        />
-                      </a>
-                    </NavLink>
-                    <span className="email">{session.user.email}</span>
-                    <NavLink
-                      href="/api/auth/signout"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        signOut();
-                      }}
-                    >
-                      Sign out
-                    </NavLink>
-                  </>
-                )}
-                
+                { !user ? <NavLink
+                    className="btn btn-link font-16"
+                    sm="12"
+                    xs="12"
+                    href="/api/auth/login"
+                  >
+                    Sign In
+                  </NavLink> : <NavLink
+                    className="btn btn-link font-16"
+                    sm="12"
+                    xs="12"
+                    href="/profile"
+                  >
+                    {user.name}
+                  </NavLink>
+                }
                 <NavLink
                   href="#"
                   className="btn btn-home-primary font-16"
