@@ -166,12 +166,12 @@ const Header = () => {
                     </DropdownToggle>
                     <DropdownMenu className="b-none animated fadeInUp">
                       <DropdownItem onClick={() => {location.href = '/profile'}}>Profile</DropdownItem>
-                      <DropdownItem onClick={() => {location.href = '/api/auth/logout'}}>Sign Out</DropdownItem>
+                      <DropdownItem onClick={() => {location.href = '/api/auth/logout'}}>Sign out</DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 }
                 <NavLink
-                  href="#"
+                  href="/fundraisers"
                   className="btn btn-home-primary font-16"
                 >
                   Donate Crypto

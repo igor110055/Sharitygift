@@ -1086,6 +1086,21 @@ Buttons
   }
 }
 
+.btn-light-reverse {
+  color: $primary;
+  background: $white;
+  border-color: $primary;
+  &:hover {
+    background: $primary;
+    color: $white;
+    border-color: $primary;
+  }
+  &:focus {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
 .btn-home-primary-light {
   color: $white;
   background: $homeprimary;
@@ -1183,7 +1198,7 @@ Buttons
 }
 
 .btn-sm {
-  padding: 0.25rem 0.5rem;
+  padding: 0.6rem 0.95rem;
   font-size: 12px;
 }
 
@@ -1272,14 +1287,14 @@ Buttons
   transition: 0.2s ease-in;
 
   &:hover {
-    background: $primary-dark;
-    border: 1px solid $primary-dark;
+    background: $primary !important;
+    border: 1px solid $primary !important;
   }
 
   &.active,
   &:active,
   &:focus {
-    background: $primary-dark;
+    background: $primary !important;
   }
 }
 

@@ -12,10 +12,10 @@ const Infobar = () => {
             <div className="d-flex align-items-center">
               <div>
                 <h4 className="subtitle font-light text-white">
-                    Lorem ipsum dolor
+                    Sharity's
                 </h4>
                 <h1 className="title text-white">
-                    LOREMISPUM
+                    Charity
                 </h1>
               </div>
             </div>
