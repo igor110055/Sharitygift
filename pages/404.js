@@ -8,7 +8,7 @@ const ErrorPage = () => {
       <Head>
         <title>404 - Page not Found</title>
         <meta
-          name="description"
+          name="Sharity"
           content="The page you are looking for is not found go back to the homepage"
         />
         <link rel="icon" href="/favicon.ico" />

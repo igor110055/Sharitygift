@@ -1,24 +1,24 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Image from "next/image";
-import img1 from "../../../assets/images/categories/medical.webp";
-import img2 from "../../../assets/images/categories/memorial.webp";
-import img3 from "../../../assets/images/categories/emergency.webp";
-import img4 from "../../../assets/images/categories/nonprofit.webp";
-import img5 from "../../../assets/images/categories/education.webp";
-import img6 from "../../../assets/images/categories/animals.webp";
-import img7 from "../../../assets/images/categories/environment.webp";
-import img8 from "../../../assets/images/categories/business.webp";
-import img9 from "../../../assets/images/categories/community.webp";
-import img10 from "../../../assets/images/categories/charitytoken.webp";
-import img11 from "../../../assets/images/categories/creative.webp";
-import img12 from "../../../assets/images/categories/event.webp";
-import img13 from "../../../assets/images/categories/faith.webp";
-import img14 from "../../../assets/images/categories/family.webp";
-import img15 from "../../../assets/images/categories/sports.webp";
-import img16 from "../../../assets/images/categories/travel.webp";
-import img17 from "../../../assets/images/categories/volunteer.webp";
-import img18 from "../../../assets/images/categories/wishes.webp";
+import img1 from "../../../assets/images/categories/Medical.jpg";
+import img2 from "../../../assets/images/categories/Memorial.jpg";
+import img3 from "../../../assets/images/categories/Emergency.jpg";
+import img4 from "../../../assets/images/categories/Nonprofit.jpg";
+import img5 from "../../../assets/images/categories/Education.jpg";
+import img6 from "../../../assets/images/categories/Animals.jpg";
+import img7 from "../../../assets/images/categories/Environment.jpg";
+import img8 from "../../../assets/images/categories/Business.jpg";
+import img9 from "../../../assets/images/categories/Community.jpg";
+import img10 from "../../../assets/images/categories/Charitytoken.jpg";
+import img11 from "../../../assets/images/categories/Creative.jpg";
+import img12 from "../../../assets/images/categories/Event.jpg";
+import img13 from "../../../assets/images/categories/Faith.jpg";
+import img14 from "../../../assets/images/categories/Family.jpg";
+import img15 from "../../../assets/images/categories/Sports.jpg";
+import img16 from "../../../assets/images/categories/Travel.jpg";
+import img17 from "../../../assets/images/categories/Volunteer.jpg";
+import img18 from "../../../assets/images/categories/Wishes.jpg";
 
 const Categories = () => {
   return (
@@ -135,7 +135,6 @@ const Categories = () => {
             <Col lg="2" md="3" sm="6" xs="12" className="align-center p-5" >
                 <Image
                     src={img10}
-                    type="image/webp"
                     width={120}
                     height={120}
                     alt="icon-globe"

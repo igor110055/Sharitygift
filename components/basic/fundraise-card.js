@@ -4,9 +4,7 @@ import Image from "next/image";
 import img1 from "../../assets/images/logos/icon-globe.png";
 import img2 from "../../assets/images/logos/icon-gear.png";
 import img3 from "../../assets/images/logos/icon-security.png";
-import img4 from "../../assets/images/logos/icon-mobile.png";
 import img5 from "../../assets/images/logos/icon-social.png";
-import img6 from "../../assets/images/logos/icon-expert.png";
 
 const FundraiseCard = () => {
   return (
@@ -15,13 +13,13 @@ const FundraiseCard = () => {
         <Container>
             <Row className="justify-content-center m-b-30">
                 <Col md="7" className="text-center">
-                    <h2 className="text-black font-bold">The leader in online fundraising</h2>
+                    <h1 className="text-black font-bold" style={{fontStyle: "italic", fontWeight: "200", letterSpacing: 3}}>&quot;Give today for a better tomorrow&quot;</h1>
                 </Col>
             </Row>
         </Container>
       <Container>
         <Row>
-            <Col lg="4" sm="6" xs="12" className="align-center p-5" >
+            <Col lg="3" sm="6" xs="12" className="align-center p-4" >
                 <Image
                 src={img1}
                 width={25}
@@ -32,10 +30,10 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Worldwide leader</h4>
                 <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    The beauty of crypto is that the currency is universal, it does not change based off of country. You can donate crypto all over the world in minutes!
                 </p>
             </Col>
-            <Col lg="4" sm="6" xs="12" className="align-center p-5" >
+            <Col lg="3" sm="6" xs="12" className="align-center p-4" >
                 <Image
                 src={img2}
                 width={25}
@@ -46,10 +44,11 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Simple setup</h4>
                 <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    Setting up an account is simple for both donor and organization. Please visit <a href="#"
+                className="">How it works</a> to learn more.
                 </p>
             </Col>
-            <Col lg="4" sm="6" xs="12" className="align-center p-5" >
+            <Col lg="3" sm="6" xs="12" className="align-center p-4" >
                 <Image
                 src={img3}
                 width={25}
@@ -60,24 +59,10 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Secure</h4>
                 <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    Each donation is secure and protected. It is important to donate and accept donations on our direct website to prevent potential scams.
                 </p>
             </Col>
-            <Col lg="4" sm="6" xs="12" className="align-center p-5" >
-                <Image
-                src={img4}
-                width={25}
-                height={25}
-                alt="icon-mobile"
-                className="img-responsive img-rounded"
-                />
-                <p className="m-t-15 m-b-0"></p>
-                <h4 className="boldcontent">Mobile app</h4>
-                <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                </p>
-            </Col>
-            <Col lg="4" sm="6" xs="12" className="align-center p-5" >
+            <Col lg="3" sm="6" xs="12" className="align-center p-4" >
                 <Image
                 src={img5}
                 width={25}
@@ -88,21 +73,7 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Social reach</h4>
                 <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                </p>
-            </Col>
-            <Col lg="4" sm="6" xs="12" className="align-center p-5" >
-                <Image
-                src={img6}
-                width={25}
-                height={25}
-                alt="icon-expert"
-                className="img-responsive img-rounded"
-                />
-                <p className="m-t-15 m-b-0"></p>
-                <h4 className="boldcontent">Expert advice</h4>
-                <p className="m-t-15 m-b-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    Our mission is to bring awareness to your organization be allowing it to be viewed by perspective donors all over the world.
                 </p>
             </Col>
         </Row>

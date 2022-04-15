@@ -1,11 +1,14 @@
 import "../styles/scss/style.scss";
 import Layout from "../layout/Layout";
+import { UserProvider } from '@auth0/nextjs-auth0';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps}) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <UserProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </UserProvider>
   );
 }
 
