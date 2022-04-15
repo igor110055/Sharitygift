@@ -188,7 +188,7 @@ export default function Profile({ user }) {
                   <Col md={12}>
                     {
                       checkboxes.map(item => (
-                        <FormGroup check><Input type="checkbox" checked={checkedItems[item.key]} onChange={handleChange} id={item.key} name={item.key} /><Label check for={item.key}>{item.name}</Label></FormGroup>
+                        <FormGroup check key={item.key}><Input type="checkbox" checked={checkedItems[item.key]} onChange={handleChange} id={item.key} name={item.key} /><Label check for={item.key}>{item.name}</Label></FormGroup>
                       ))
                     }
                 </Col></div>}
