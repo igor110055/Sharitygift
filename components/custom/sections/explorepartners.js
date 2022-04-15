@@ -107,6 +107,30 @@ const ExplorePartners = () => {
                   <Label htmlFor="mission">4&#41; If yes, What is your EIN Number&#63;</Label>
                   <Input type="textarea" className="form-control" id="mission" name="mission" rows="2" />
                 </FormGroup>
+                <FormGroup className="col-md-12">
+                  <Label htmlFor="goodstanding">5&#41; Is your business in good standings&#63; &#40;Yes or No&#41;</Label>
+                  <Input className="form-control" id="goodstanding" name="goodstanding" />
+                </FormGroup>
+                <FormGroup className="col-md-12">
+                  <Label htmlFor="whynotgoodstanding">If no, please tell us why&#63;</Label>
+                  <Input type="textarea" className="form-control" id="whynotgoodstanding" name="whynotgoodstanding" rows="2" />
+                </FormGroup>
+                <FormGroup className="col-md-12">
+                  <Label htmlFor="litigation">6&#41; Are there any pending or expected litigations involving your organization&#63; &#40;Yes or No&#41;</Label>
+                  <Input className="form-control" id="litigation" name="litigation" />
+                </FormGroup>
+                <FormGroup className="col-md-12">
+                  <Label htmlFor="litigationexplain">If yes, please explain</Label>
+                  <Input type="textarea" className="form-control" id="litigationexplain" name="litigationexplain" rows="2" />
+                </FormGroup>
+                <FormGroup className="col-md-12">
+                  <Label htmlFor="criminalbackground">7&#41; Does any employee/volunteer have a criminal background, is awaiting trial, or have a pending criminal or civil case pending&#63; &#40;Yes or No&#41;</Label>
+                  <Input className="form-control" id="criminalbackground" name="criminalbackground" />
+                </FormGroup>
+                <FormGroup className="col-md-12">
+                  <Label htmlFor="criminalbackgroundexplain">If yes, please explain</Label>
+                  <Input type="textarea" className="form-control" id="criminalbackgroundexplain" name="criminalbackgroundexplain" rows="2" />
+                </FormGroup>
               </Form>
             </Col>:""}
             
