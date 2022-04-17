@@ -21,8 +21,10 @@
     "next-optimized-images": "^2.6.2",
     "nodemailer": "^6.7.3",
     "prop-types": "15.7.2",
+    "pspdfkit": "^2022.2.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-dropzone": "^12.0.5",
     "react-slider": "^2.0.0",
     "reactstrap": "8.10.0",
     "sass": "^1.29.0"

@@ -6,6 +6,7 @@ import Image from "next/image";
 import GeneralBanner from "../components/custom/sections/generalbanner";
 import Submenu2 from "../components/custom/sections/submenu2";
 import SubInfobar from "../components/custom/sections/subinfobar";
+import PdfViewerComponent from '../components/PdfViewerComponent';
 
 import donorimg from "../assets/images/landingpage/donorimg.png";
 
@@ -22,6 +23,7 @@ export default function Donors() {
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
       </Head>
       <div className="p-t-102">
+        
         <GeneralBanner title="Lorem ispun doler donors" />
         <SubInfobar />
         <Submenu2 />
