@@ -151,7 +151,7 @@ export default function Donate() {
                     <FormGroup className="col-md-12">
                         <Input type="select" id="country" required disabled={anonym} placeholder="Country" >
                             {
-                                countries?countries.map((country) => <option>{country.name}</option>):""
+                                countries?countries.map((country) => <option key={country.name}>{country.name}</option>):""
                             }
                         </Input>
                     </FormGroup>
