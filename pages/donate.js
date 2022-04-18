@@ -203,7 +203,7 @@ export default function Donate() {
                     </FormGroup>: ""}
                     
                     <FormGroup className="col-md-12">
-                        Wallet Address: <span style={{whiteSpace: "nowrap"}}>{currentAccount ? currentAccount.substring(0, 6)+"...."+ currentAccount.slice(-6): "No Wallet Connected"}</span>
+                        Wallet Address: <span style={{whiteSpace: "nowrap"}}>{currentAccount ? currentAccount.substring(0, 8)+"...."+ currentAccount.slice(-6): "No Wallet Connected"}</span>
                     </FormGroup>
                     
                 </Form>

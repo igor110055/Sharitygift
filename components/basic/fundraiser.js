@@ -52,9 +52,9 @@ const Fundraiser = (props) => {
                 </Row>
                 {props.buttonShow?<Row>
                     <Col md={12} style={{textAlign: "right"}}>
-                        <Link>
+                        <Link href="/donate">
                             <a
-                                href="/donate"
+                                href="#"
                                 className="btn btn-sm btn-home-primary"
                                 onClick={function noRefCheck(){}}
                             >
