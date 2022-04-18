@@ -91,10 +91,10 @@ export default function Donate() {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const signer = provider.getSigner();
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
-
+                alert(eth)
                 console.log("Initialize payment");
-                let nftTxn = await nftContract.donate(donee, tax, {
-                value: ethers.utils.parseEther(amount)
+                let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
+                    value: ethers.utils.parseEther(eth)
                 });
                 // let nftTxn = await nftContract.hiddenURI();
                 // console.log(nftTxn);
@@ -211,7 +211,7 @@ export default function Donate() {
           </Row>
           <Row>
             <Col className="text-right" md={12}>
-                <Button type="submit" className="btn btn-primary waves-effect waves-light" onClick={donateHandler}>Donate</Button>
+                <Button type="button" className="btn btn-primary waves-effect waves-light" onClick={donateHandler}>Donate</Button>
             </Col>
           </Row>
         </Container>
