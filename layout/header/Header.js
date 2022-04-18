@@ -171,7 +171,7 @@ const Header = () => {
                   </UncontrolledDropdown>
                 }
                 <NavLink
-                  href="/fundraisers"
+                  href="/explorer"
                   className="btn btn-home-primary font-16"
                 >
                   Donate Crypto

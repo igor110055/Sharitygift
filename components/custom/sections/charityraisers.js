@@ -20,13 +20,13 @@ const CharityRaisers = () => {
           </Row>
           <Row className="m-t-20">
             <Col md="4">
-              <Fundraiser imgSrc={img1} />
+              <Fundraiser imgSrc={img1} buttonShow={true} title="Lorem ipsum worrrr" description="Lorem Ipsum Rorem" />
             </Col>
             <Col md="4">
-              <Fundraiser imgSrc={img2} />
+              <Fundraiser imgSrc={img2} buttonShow={true} />
             </Col>
             <Col md="4">
-              <Fundraiser imgSrc={img3} />
+              <Fundraiser imgSrc={img3} buttonShow={true} />
             </Col>
           </Row>
         </Container>

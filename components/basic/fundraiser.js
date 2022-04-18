@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Container, Card, CardBody } from "reactstrap";
+import Link from "next/link";
 import ReactSlider from "react-slider";
 import Image from "next/image";
 import PropTypes from 'prop-types';  
@@ -22,9 +23,9 @@ const Fundraiser = (props) => {
             </a>
             <CardBody>
                 <h5 className="font-medium m-b-0">
-                    <p>Lorem ispum doler sit amet</p>
+                    <p>{props.title}</p>
                 </h5>
-                <p className="m-b-0 font-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p className="m-b-0 font-14">{props.description}</p>
                 <Row>
                     <Col md={9} sm={9} xs={9}>
                         <ReactSlider
@@ -49,6 +50,18 @@ const Fundraiser = (props) => {
                         <p className="font-18 text-secondary"><b>$2,100</b></p>
                     </Col>
                 </Row>
+                {props.buttonShow?<Row>
+                    <Col md={12} style={{textAlign: "right"}}>
+                        <a
+                            href="/donate"
+                            className="btn btn-sm btn-home-primary"
+                            onClick={function noRefCheck(){}}
+                        >
+                            Donate
+                        </a>
+                    </Col>
+                </Row>:""}
+                
             </CardBody>
         </Card>
     </div>

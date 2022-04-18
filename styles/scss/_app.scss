@@ -1070,8 +1070,13 @@ Buttons
   color: $bodytext;
   padding: 10px 15px;
   display: inline-flex;
+  background-color: $white;
+  border: 1px solid $bodytext;
   &:hover {
-    color: $primary;
+    background-color: $primary !important;
+  }
+  &:focus {
+    background-color: $primary !important;
   }
 }
 

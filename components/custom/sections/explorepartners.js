@@ -127,7 +127,7 @@ const ExplorePartners = () => {
                         <Label htmlFor="checkbox2"> Use my existing wallet </Label>
                     </FormGroup>
                     <Col md="12">
-                        <Button type="submit" className="btn btn-alternate waves-effect waves-light m-r-15 p-l-40 p-r-40">Submit</Button>
+                      <Button type="submit" className="btn btn-alternate waves-effect waves-light m-r-15 p-l-40 p-r-40">Submit</Button>
                     </Col>
                 </Form>
             </Col>
