@@ -2,7 +2,7 @@ import Head from "next/head";
 import React, {useState, useEffect} from "react";
 import { ethers } from 'ethers';
 import Link from "next/link";
-import { Row, Col, Container, Card, CardBody, Form, FormGroup, Label, Input, Button, InputGroup, InputGroupText } from "reactstrap";
+import { Row, Col, Container, Card, CardBody, Form, FormGroup, Label, Input, Button, InputGroup, InputGroupText, Toast, ToastBody, ToastHeader } from "reactstrap";
 
 import contract from '../contracts/contract.json';
 
@@ -20,6 +20,7 @@ export default function Donate() {
     const [usd, setUSD] = useState(0);
     const [eth, setETH] = useState(0);
     const [ethusd, setDirection] = useState(true);
+    const [toggleToast, setToggle] = useState(true);
     const [currentAccount, setCurrentAccount] = useState(null);
     // const countries = fetch("https://restcountries.com/v2/all")
     useEffect(async () => {
@@ -91,10 +92,9 @@ export default function Donate() {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const signer = provider.getSigner();
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
-                alert(eth)
                 console.log("Initialize payment");
                 let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
-                    value: ethers.utils.parseEther(eth)
+                    value: ethers.utils.parseEther(eth.toFixed(3).toString())
                 });
                 // let nftTxn = await nftContract.hiddenURI();
                 // console.log(nftTxn);
@@ -123,6 +123,7 @@ export default function Donate() {
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
       </Head>
       <div className="p-t-102">
+        
         <Container className="m-t-20">
           <Row>
             <Col md="12">
