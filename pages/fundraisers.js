@@ -14,7 +14,7 @@ import C2aComponent from "../components/custom/sections/c2acomponent";
 import ContactComponent from "../components/custom/sections/contactcomponent";
 import MainBanner from "../components/custom/sections/mainbanner";
 import Categories from "../components/custom/sections/categories";
-import CharityRaisers from "../components/custom/sections/charityraisers";
+// import CharityRaisers from "../components/custom/sections/charityraisers";
 import MedicalRaisers from "../components/custom/sections/medicalraisers";
 import AnimalRaisers from "../components/custom/sections/animalraisers";
 import CallToAction from "../components/call-to-action/CallToAction";
@@ -35,7 +35,7 @@ export default function Fundraiser() {
         <MainBanner />
         <PortfolioComponent />
         <Categories />
-        <CharityRaisers />
+        {/* <CharityRaisers /> */}
         <MedicalRaisers />
         <AnimalRaisers />
         <div className="align-center">

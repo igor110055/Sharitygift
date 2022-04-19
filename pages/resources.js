@@ -6,13 +6,6 @@ import GeneralBanner from "../components/custom/sections/generalbanner";
 import SubBanner from "../components/custom/sections/subbanner";
 import ResourcesPortfolio from "../components/custom/sections/resourcesportfolio";
 import CryptoTokens from "../components/custom/sections/cryptotokens";
-import Categories from "../components/custom/sections/categories";
-import CharityRaisers from "../components/custom/sections/charityraisers";
-import MedicalRaisers from "../components/custom/sections/medicalraisers";
-import AnimalRaisers from "../components/custom/sections/animalraisers";
-import PartnershipPortfolio from "../components/custom/sections/partnershipportfolio";
-import Infobar from "../components/custom/sections/infobar";
-import ExplorePartners from "../components/custom/sections/explorepartners";
 
 export default function Resources() {
   return (
