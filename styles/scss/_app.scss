@@ -2082,3 +2082,18 @@ a.btn-outline-success {
 .playerProfilePic_home_tile {
   width: -webkit-fill-available;
 }
+
+.btn-secondary:not(:disabled):not(.disabled):active {
+  color: $white !important;
+  border-color: $secondary!important;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):focus {
+  color: $white !important;
+  border-color: $secondary !important;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):hover {
+  color: $white !important;
+  border-color: $secondary !important;
+}

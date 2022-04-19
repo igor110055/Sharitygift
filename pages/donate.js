@@ -94,7 +94,7 @@ export default function Donate() {
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
                 let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
-                    value: ethers.utils.parseEther(eth.toFixed(3).toString())
+                    value: ethers.utils.parseEther(Number(eth).toFixed(3).toString())
                 });
                 // let nftTxn = await nftContract.hiddenURI();
                 // console.log(nftTxn);
@@ -181,18 +181,18 @@ export default function Donate() {
                     <FormGroup className="col-md-10 m-b-0">
                         <InputGroup>
                             <InputGroupText>
-                            {ethusd?"ETH":"$"}
+                            {ethusd?"$":"ETH"}
                             </InputGroupText>
-                            <Input type="number" className="form-control" id="eth" required placeholder={ethusd?"ETH":"USD"} onChange={ethusd?handleEthChange:handleUsdChange} value={ethusd?eth:usd} />
+                            <Input type="number" className="form-control" id="usd" required placeholder={ethusd?"USD":"ETH"} onChange={ethusd?handleUsdChange:handleEthChange} value={ethusd?usd:eth} />
                         </InputGroup>
                     </FormGroup>
                     <FormGroup className="col-md-10">
                         <hr />
                         <InputGroup>
                             <InputGroupText>
-                            {ethusd?"$":"ETH"}
+                            {ethusd?"ETH":"$"}
                             </InputGroupText>
-                            <Input type="number" className="form-control" id="usd" required placeholder={ethusd?"USD":"ETH"} onChange={ethusd?handleUsdChange:handleEthChange} value={ethusd?usd:eth} />
+                            <Input type="number" className="form-control" id="eth" required placeholder={ethusd?"ETH":"USD"} onChange={ethusd?handleEthChange:handleUsdChange} value={ethusd?eth:usd} />
                         </InputGroup>
                         
                     </FormGroup>
@@ -206,13 +206,10 @@ export default function Donate() {
                     <FormGroup className="col-md-12">
                         Wallet Address: <span style={{whiteSpace: "nowrap"}}>{currentAccount ? currentAccount.substring(0, 8)+"...."+ currentAccount.slice(-6): "No Wallet Connected"}</span>
                     </FormGroup>
-                    
+                    <FormGroup className="col-md-12">
+                        <Button type="button" className="btn btn-primary waves-effect waves-light" onClick={donateHandler}>Donate</Button>
+                    </FormGroup>
                 </Form>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="text-right" md={12}>
-                <Button type="button" className="btn btn-primary waves-effect waves-light" onClick={donateHandler}>Donate</Button>
             </Col>
           </Row>
         </Container>

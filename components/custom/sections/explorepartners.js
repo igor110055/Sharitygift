@@ -63,20 +63,20 @@ const ExplorePartners = () => {
                         <Input type="text" className="form-control" id="phone" required />
                     </FormGroup>
                     <FormGroup className="col-md-6">
-                        <Label htmlFor="orgname">Organization name<span className="text-red">*</span></Label>
-                        <Input type="text" className="form-control" id="orgname" required />
+                        <Label htmlFor="orgname">Organization name</Label>
+                        <Input type="text" className="form-control" id="orgname" />
                     </FormGroup>
                     <FormGroup className="col-md-6">
                         <Label htmlFor="websiteurl">Website URL</Label>
                         <Input type="url" className="form-control" id="websiteurl" />
                     </FormGroup>
                     <FormGroup className="col-md-6">
-                        <Label htmlFor="photo">Photo<span className="text-red">*</span></Label>
-                        <Input type="file" className="form-control" id="photo" required />
+                        <Label htmlFor="photo">Photo</Label>
+                        <Input type="file" className="form-control" id="photo"  />
                     </FormGroup>
                     <FormGroup className="col-md-6">
-                        <Label htmlFor="logo">Logo<span className="text-red">*</span></Label>
-                        <Input type="file" className="form-control" id="logo" required />
+                        <Label htmlFor="logo">Logo</Label>
+                        <Input type="file" className="form-control" id="logo"  />
                     </FormGroup>
                     <FormGroup className="col-md-12">
                         <Label htmlFor="category">Select my category<span className="text-red">*</span></Label>
