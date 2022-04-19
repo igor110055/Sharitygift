@@ -93,14 +93,22 @@ export default function Donate() {
                 const signer = provider.getSigner();
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
-                let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
-                    value: ethers.utils.parseEther(Number(eth).toFixed(3).toString())
-                });
-                // let nftTxn = await nftContract.hiddenURI();
-                // console.log(nftTxn);
+                try{
+                    let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
+                        value: ethers.utils.parseEther(Number(eth).toFixed(3).toString())
+                    });
+                    // let nftTxn = await nftContract.hiddenURI();
+                    // console.log(nftTxn);
 
-                console.log("Mining... please wait");
-                await nftTxn.wait();
+                    console.log("Mining... please wait");
+                    await nftTxn.wait();
+                } catch ( err ) {
+                    const code = err.data.replace('Reverted ','');
+                    console.log({err});
+                    let reason = ethers.utils.toUtf8String('0x' + code.substr(138));
+                    console.log('revert reason:', reason);
+                }
+                
 
                 console.log(`Mined, transaction hash: ${nftTxn.hash}`);
             } else {

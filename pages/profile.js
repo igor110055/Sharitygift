@@ -49,71 +49,270 @@ export default function Profile({ user }) {
       setCheckedItems(data.checkedItems)
     }
   }, [data]);
-
   const checkboxes = [
     {
-        name: 'Medical',
-        key: 'medical',
+        name: 'aapi led',
+        key: 'aapi-led',
     },
     {
-      name: 'Emergency',
-      key: 'emergency',
+      name: 'adoption',
+      key: 'adoption',
     },
     {
-      name: 'Non Profit',
-      key: 'nonprofit',
+      name: 'afghanistan',
+      key: 'afghanistan',
     },
     {
-      name: 'Education',
-      key: 'education',
-    },
-    {
-      name: 'Animals',
+      name: 'animals',
       key: 'animals',
     },
     {
-      name: 'Environment',
+      name: 'athletics',
+      key: 'athletics',
+    },
+    {
+      name: 'autism',
+      key: 'autism',
+    },
+    {
+      name: 'black led',
+      key: 'black-led',
+    },
+    {
+      name: 'buddhism',
+      key: 'buddhism',
+    },
+    {
+      name: 'cancer',
+      key: 'cancer',
+    },
+    {
+      name: 'cats',
+      key: 'cats',
+    },
+    {
+      name: 'christianity',
+      key: 'christianity',
+    },
+    {
+      name: 'climate',
+      key: 'climate',
+    },
+    {
+      name: 'conservation',
+      key: 'conservation',
+    },
+    {
+      name: 'coronavirus',
+      key: 'coronavirus',
+    },
+    {
+      name: 'culture',
+      key: 'culture',
+    },
+    {
+      name: 'dance',
+      key: 'dance',
+    },
+    {
+      name: 'disabilities',
+      key: 'disabilities',
+    },
+    {
+      name: 'disease',
+      key: 'disease',
+    },
+    {
+      name: 'dogs',
+      key: 'dogs',
+    },
+    {
+      name: 'education',
+      key: 'education',
+    },
+    {
+      name: 'environment',
       key: 'environment',
     },
     {
-      name: 'Business',
-      key: 'business',
+      name: 'film and tv',
+      key: 'filmandtv',
     },
     {
-      name: 'Community',
-      key: 'community',
+      name: 'food security',
+      key: 'food-security',
     },
     {
-      name: 'Charity token',
-      key: 'chritytoken',
+      name: 'freepress',
+      key: 'freepress',
     },
     {
-      name: 'Event',
-      key: 'event',
+      name: 'gender equality',
+      key: 'gender-equality',
     },
     {
-      name: 'Faith',
-      key: 'faith',
+      name: 'health',
+      key: 'health',
     },
     {
-      name: 'Family',
-      key: 'family',
+      name: 'hinduism',
+      key: 'hinduism',
     },
     {
-      name: 'Sports',
-      key: 'sports',
+      name: 'housing',
+      key: 'housing',
     },
     {
-      name: 'Travel',
-      key: 'travel',
+      name: 'humans',
+      key: 'humans',
     },
     {
-      name: 'Volunteer',
-      key: 'volunteer',
+      name: 'hurricane laura',
+      key: 'hurricane-laura',
     },
     {
-      name: 'Wishes',
-      key: 'wishes',
+      name: 'immigrants',
+      key: 'immigrants',
+    },
+    {
+      name: 'indigenous led',
+      key: 'indigenous-led',
+    },
+    {
+      name: 'indigenous people',
+      key: 'indigenous-peoples',
+    },
+    {
+      name: 'islam',
+      key: 'islam',
+    },
+    {
+      name: 'judaism',
+      key: 'judaism',
+    },
+    {
+      name: 'justice',
+      key: 'justice',
+    },
+    {
+      name: 'latine led',
+      key: 'latine-led',
+    },
+    {
+      name: 'legal',
+      key: 'legal',
+    },
+    {
+      name: 'lgbt',
+      key: 'lgbt',
+    },
+    {
+      name: 'libraries',
+      key: 'libraries',
+    },
+    {
+      name: 'mental health',
+      key: 'mental-health',
+    },
+    {
+      name: 'middle east',
+      key: 'middle-east',
+    },
+    {
+      name: 'museums',
+      key: 'museums',
+    },
+    {
+      name: 'music',
+      key: 'music',
+    },
+    {
+      name: 'oceans',
+      key: 'oceans',
+    },
+    {
+      name: 'poverty',
+      key: 'poverty',
+    },
+    {
+      name: 'racial justice',
+      key: 'racial-justice',
+    },
+    {
+      name: 'refugees',
+      key: 'refugees',
+    },
+    {
+      name: 'religion',
+      key: 'religion',
+    },
+    {
+      name: 'reproductive justice',
+      key: 'reproductive-justice',
+    },
+    {
+      name: 'research',
+      key: 'research',
+    },
+    {
+      name: 'science',
+      key: 'science',
+    },
+    {
+      name: 'seniors',
+      key: 'seniors',
+    },
+    {
+      name: 'space',
+      key: 'space',
+    },
+    {
+      name: 'theater',
+      key: 'theater',
+    },
+    {
+      name: 'transgender',
+      key: 'transgender',
+    },
+    {
+      name: 'ukraine',
+      key: 'ukraine',
+    },
+    {
+      name: 'veterans',
+      key: 'veterans',
+    },
+    {
+      name: 'visualart',
+      key: 'visualart',
+    },
+    {
+      name: 'votingrights',
+      key: 'votingrights',
+    },
+    {
+      name: 'water',
+      key: 'water',
+    },
+    {
+      name: 'wildfires',
+      key: 'wildfires',
+    },
+    {
+      name: 'wildlife',
+      key: 'wildlife',
+    },
+    {
+      name: 'women led',
+      key: 'women-led',
+    },
+    {
+      name: 'womens health',
+      key: 'womens-health',
+    },
+    {
+      name: 'youth',
+      key: 'youth',
     },
   ];
   if(loading){
