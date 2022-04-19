@@ -15,8 +15,9 @@ const CharityRaisers = (props) => {
 
   useEffect(async () => {
     const nonprofits = await fetch(`https://partners.every.org/v0.2/browse/${props.title}?apiKey=72a0e0f6c64e2d13ee4108a39acfa99a`, { headers: {'Access-Control-Allow-Origin': '*'}, mode: "no-cors"});
-    const json = await nonprofits.json();
-    console.log(json)
+    console.log(nonprofits)
+    // const json = await nonprofits.json();
+    // console.log(json)
   }, []);
 
   return (
