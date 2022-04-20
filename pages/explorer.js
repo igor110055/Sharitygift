@@ -33,6 +33,7 @@ export default function Explorer(props) {
   useEffect(async () => {
     if(data.checkedItems)
       setKeys(Object.keys(data.checkedItems));
+    console.log(props.charities)
   }, [data]);
 
   return (
@@ -153,7 +154,6 @@ export async function getStaticProps() {
     const json = await charity.json()
     charities[categories[i]] = json['nonprofits']
   }
-  console.log(charities)
   return {
     props: {
       charities,
