@@ -61,9 +61,7 @@ const Fundraiser = (props) => {
                             },
                         }}>
                             <a
-                                href="#"
                                 className="btn btn-sm btn-home-primary"
-                                onClick={function noRefCheck(){}}
                             >
                                 Donate
                             </a>
