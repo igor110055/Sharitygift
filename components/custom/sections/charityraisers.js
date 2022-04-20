@@ -24,9 +24,11 @@ const CharityRaisers = (props) => {
           </Row>
           <Row className="m-t-20">
             {props.charities.slice(0,3).map((charity) => {
+              return (
               <Col md="4">
                 <Fundraiser imgSrc={charity.logoUrl} buttonShow={true} title={charity.name} description={charity.description} />
               </Col>
+              )
             })}
           </Row>
         </Container>
