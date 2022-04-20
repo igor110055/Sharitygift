@@ -19,6 +19,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 import logo from "../../assets/images/logos/newshari.png";
+import { useEffect } from "react/cjs/react.production.min";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +35,9 @@ const Header = () => {
       <div className="header6">
         <Container className="po-relative">
           <Navbar className="navbar-expand-lg h6-nav-bar">
-            <NavbarBrand href="/">
-              <Image src={logo} alt="wrapkit" width={90} height={90} />
-            </NavbarBrand>
+            <Link href="/">
+              <a className="navbar-brand"><Image src={logo} alt="wrapkit" width={90} height={90} /></a>
+            </Link>
             <NavbarToggler onClick={toggle}>
               <span className="ti-menu"></span>
             </NavbarToggler>
@@ -170,18 +171,12 @@ const Header = () => {
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 }
-                <NavLink
-                  href="/explorer"
-                  className="btn btn-home-primary font-16"
-                >
-                  Donate Crypto
-                </NavLink>
-                <NavLink
-                  href="/partnership"
-                  className="btn btn-home-secondary font-16"
-                >
-                  Become a Partner
-                </NavLink>
+                <Link href="/explorer">
+                  <a className="btn btn-home-primary font-16 nav-link">Donate Crypto</a>
+                </Link>
+                <Link href="/partnership">
+                  <a className="btn btn-home-secondary font-16 nav-link">Become a Partner</a>
+                </Link>
               </div>
             </Collapse>
           </Navbar>

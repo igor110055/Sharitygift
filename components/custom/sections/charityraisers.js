@@ -13,13 +13,6 @@ const CharityRaisers = (props) => {
   
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1)
 
-  useEffect(async () => {
-    const nonprofits = await fetch(`https://partners.every.org/v0.2/browse/${props.title}?apiKey=72a0e0f6c64e2d13ee4108a39acfa99a`, { headers: {'Access-Control-Allow-Origin': '*'}, mode: "no-cors"});
-    // console.log(nonprofits.json())
-    const json = await nonprofits.json();
-    console.log(json)
-  }, []);
-
   return (
     <div>
       <div className="spacer">
@@ -52,5 +45,6 @@ const CharityRaisers = (props) => {
     </div>
   );
 };
+
 
 export default CharityRaisers;

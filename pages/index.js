@@ -1,7 +1,8 @@
 import Head from "next/head";
-import CustomComponents from "../components/custom/Custom-components";
-
+import React, {useState, useEffect} from "react";
+import CustomComponents from "../components/custom/Custom-components"; 
 export default function Home() {
+
   return (
     <div>
       <Head>
