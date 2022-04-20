@@ -233,10 +233,3 @@ export async function getServerSideProps(context) {
         props: context.params, // will be passed to the page component as props
     }
 }
-
-export async function getStaticPaths() {
-    return {
-        paths: [], //indicates that no page needs be created at build time
-        fallback: 'blocking' //indicates the type of fallback
-    }
-}
