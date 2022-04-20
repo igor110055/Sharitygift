@@ -141,7 +141,7 @@ export default function Donate(props) {
           </Row>
           <Row className="m-t-20">
             <Col md="4">
-              <Fundraiser imgSrc={img1} buttonShow={false} title={props.title} description={props.description} />
+              <Fundraiser imgSrc={props.imgSrc} buttonShow={false} title={props.title} description={props.description} />
             </Col>
             <Col md="5">
                 <Form className="row">
