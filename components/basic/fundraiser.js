@@ -6,7 +6,7 @@ import Image from "next/image";
 import PropTypes from 'prop-types';  
 
 const Fundraiser = (props) => {
-    const truncate = ( str, n, useWordBoundary ) => {
+    const truncateString = ( str, n, useWordBoundary ) => {
         if (str.length <= n) { return str; }
         const subString = str.substr(0, n-1); // the original check
         return (useWordBoundary 
@@ -31,7 +31,7 @@ const Fundraiser = (props) => {
                 <h5 className="font-medium m-b-0">
                     <p>{props.title}</p>
                 </h5>
-                <p className="m-b-0 font-14">{truncate(props.description, 200, true)}</p>
+                <p className="m-b-0 font-14">{truncateString(props.description, 350, true)}</p>
                 <Row>
                     <Col md={9} sm={9} xs={9}>
                         <ReactSlider
