@@ -1,18 +1,17 @@
 /* eslint-disable */
 import React, {useEffect, useState} from "react";
 import { Row, Col, Container, Card, CardBody } from "reactstrap";
-import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import Fundraiser from "../../basic/fundraiser";
-import img1 from "../../../assets/images/portfolio/img7.jpg";
-import img2 from "../../../assets/images/portfolio/img8.jpg";
-import img3 from "../../../assets/images/portfolio/img9.jpg";
 
 const CharityRaisers = (props) => {
-  
+  const [showAll, setShowAll] = useState(false);
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1)
-
+  const seeMore = (e) => {
+    e.preventDefault();
+    setShowAll(1-showAll);
+  }
   return (
     <div>
       <div className="spacer">
@@ -23,7 +22,13 @@ const CharityRaisers = (props) => {
             </Col>
           </Row>
           <Row className="m-t-20">
-            {props.charities.slice(0,3).map((charity) => {
+            {!showAll?props.charities.slice(0,3).map((charity) => {
+              return (
+              <Col md="4">
+                <Fundraiser imgSrc={charity.logoUrl.replace(",w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive", "")} buttonShow={true} title={charity.name} description={charity.description} />
+              </Col>
+              )
+            }):props.charities.map((charity) => {
               return (
               <Col md="4">
                 <Fundraiser imgSrc={charity.logoUrl.replace(",w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive", "")} buttonShow={true} title={charity.name} description={charity.description} />
@@ -35,7 +40,7 @@ const CharityRaisers = (props) => {
         <Container>
           <Row className="align-right">
             <Col md="12">
-              <Link href="#"><a href="#"><h5>See More <i className="fa fa-arrow-right"></i></h5></a></Link>
+              <Link href="#"><a href="#"><h5 onClick={seeMore}>See More <i className="fa fa-arrow-right"></i></h5></a></Link>
             </Col>
           </Row>
         </Container>
