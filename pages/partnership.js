@@ -28,19 +28,7 @@ export default function Partnership() {
         <Infobar />
         <ExplorePartners />
         <p className="p-t-20"></p>
-      </div>
-      {/* <HeaderComponent />
-      <BannerComponent />
-      <FormBannerComponent />
-      <FeatureComponent />
-      
-      <PricingComponent />
-      <TeamComponent />
-      <TestimonialComponent />
-      <BlogComponent />
-      <C2aComponent />
-      <ContactComponent /> */}
-      
+      </div>      
     </div>
   );
 }

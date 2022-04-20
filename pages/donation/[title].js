@@ -12,7 +12,7 @@ import img1 from "../assets/images/portfolio/img7.jpg";
 const contractAddress = "0xF4d1c3C79BC78F7ecA41c01E9476E27A0465914f";
 const abi = contract.abi;
 
-export default function Donate() {
+export default function Donate(props) {
     const [anonym, setAnonym] = useState(false);
     const [countries, setCountries] = useState(null);
     const [rate, setRate] = useState(0);
@@ -141,7 +141,7 @@ export default function Donate() {
           </Row>
           <Row className="m-t-20">
             <Col md="4">
-              <Fundraiser imgSrc={img1} buttonShow={false} title="Lorem ipsum" description="adjoiwjqoidwioqjdwioqjdwioqjdiowjqf" />
+              <Fundraiser imgSrc={img1} buttonShow={false} title={props.title} description={props.description} />
             </Col>
             <Col md="5">
                 <Form className="row">
@@ -227,3 +227,9 @@ export default function Donate() {
     </div>
   );
 }
+
+export async function getStaticProps(context) {
+    return {
+      props: context.params, // will be passed to the page component as props
+    }
+  }

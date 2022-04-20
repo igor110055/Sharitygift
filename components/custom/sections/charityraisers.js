@@ -40,7 +40,7 @@ const CharityRaisers = (props) => {
         <Container>
           <Row className="align-right">
             <Col md="12">
-              <Link href="#"><a href="#"><h5 onClick={seeMore}>See More <i className="fa fa-arrow-right"></i></h5></a></Link>
+              <Link href="#"><a href="#"><h5 onClick={seeMore}>{!showAll?'See More':'See Less'} <i className="fa fa-arrow-right"></i></h5></a></Link>
             </Col>
           </Row>
         </Container>

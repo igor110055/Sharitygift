@@ -52,7 +52,14 @@ const Fundraiser = (props) => {
                 </Row>
                 {props.buttonShow?<Row>
                     <Col md={12} style={{textAlign: "right"}}>
-                        <Link href="/donate">
+                        <Link href={{
+                            pathname: `/donation/[title]`,
+                            query: {
+                                imgSrc: props.imgSrc,
+                                description: props.description,
+                                title: props.title.replace(' ', '-'),
+                            },
+                        }}>
                             <a
                                 href="#"
                                 className="btn btn-sm btn-home-primary"
