@@ -17,7 +17,7 @@ const Fundraiser = (props) => {
                     src={props.imgSrc}
                     alt="wrappixel kit"
                     width={459}
-                    height={328}
+                    height={459}
                 />
                 
             </a>

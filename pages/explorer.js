@@ -54,11 +54,14 @@ export default function Explorer(props) {
             Loading...
           </Spinner></div>:""}
         {!loading?(keys && keys.map((item) => {
-          
           if(data.checkedItems[item] == true){
             return (<CharityRaisers key={item} title={item} charities={props.charities[item]} />)
           }
         })):""}
+        {!loading?(!keys && Object.keys(props.charities).slice(0,3).map((item) => {
+          return (<CharityRaisers key={item} title={item} charities={props.charities[item]} />)
+        }
+        )):""}
         {/* <CharityRaisers />
         <MedicalRaisers />
         <AnimalRaisers /> */}
