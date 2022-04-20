@@ -228,7 +228,7 @@ export default function Donate(props) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     return {
         props: context.params, // will be passed to the page component as props
     }
