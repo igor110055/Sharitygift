@@ -4,10 +4,10 @@ import { ethers } from 'ethers';
 import Link from "next/link";
 import { Row, Col, Container, Card, CardBody, Form, FormGroup, Label, Input, Button, InputGroup, InputGroupText, Toast, ToastBody, ToastHeader } from "reactstrap";
 
-import contract from '../contracts/contract.json';
+import contract from '../../contracts/contract.json';
 
-import Fundraiser from "../components/basic/fundraiser"
-import img1 from "../assets/images/portfolio/img7.jpg";
+import Fundraiser from "../../components/basic/fundraiser"
+import img1 from "../../assets/images/portfolio/img7.jpg";
 
 const contractAddress = "0xF4d1c3C79BC78F7ecA41c01E9476E27A0465914f";
 const abi = contract.abi;
