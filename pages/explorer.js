@@ -146,11 +146,11 @@ export async function getStaticProps() {
     "womens-health",
     "youth"
   ]
-  const charities = []
+  const charities = {}
   for ( let i = 0; i < categories.length; i ++ ){
     const charity = await fetch("https://partners.every.org/v0.2/browse/"+categories[i]+"?apiKey=72a0e0f6c64e2d13ee4108a39acfa99a");
     const json = await charity.json()
-    charities.push(json)
+    charities[categories[i]] = json['nonprofits']
   }
 
   return {
