@@ -228,8 +228,8 @@ export default function Donate(props) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({query}) {
     return {
-        props: context.params, // will be passed to the page component as props
+        props: query, // will be passed to the page component as props
     }
 }
