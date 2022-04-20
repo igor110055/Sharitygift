@@ -153,7 +153,7 @@ export async function getStaticProps() {
     const json = await charity.json()
     charities[categories[i]] = json['nonprofits']
   }
-
+  console.log(charities)
   return {
     props: {
       charities,
