@@ -33,7 +33,6 @@ export default function Explorer(props) {
   useEffect(async () => {
     if(data.checkedItems)
       setKeys(Object.keys(data.checkedItems));
-    console.log(props.charities)
   }, [data]);
 
   return (
@@ -57,8 +56,7 @@ export default function Explorer(props) {
         {!loading?(keys && keys.map((item) => {
           
           if(data.checkedItems[item] == true){
-            console.log("yessss")
-            return (<CharityRaisers key={item} title={item} />)
+            return (<CharityRaisers key={item} title={item} charities={props.charities[item]} />)
           }
         })):""}
         {/* <CharityRaisers />

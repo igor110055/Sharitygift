@@ -23,15 +23,11 @@ const CharityRaisers = (props) => {
             </Col>
           </Row>
           <Row className="m-t-20">
-            <Col md="4">
-              <Fundraiser imgSrc={img1} buttonShow={true} title="Lorem ipsum worrrr" description="Lorem Ipsum Rorem" />
-            </Col>
-            <Col md="4">
-              <Fundraiser imgSrc={img2} buttonShow={true} />
-            </Col>
-            <Col md="4">
-              <Fundraiser imgSrc={img3} buttonShow={true} />
-            </Col>
+            {props.charities.slice(0,3).map((charity) => {
+              <Col md="4">
+                <Fundraiser imgSrc={charity.logoUrl} buttonShow={true} title={charity.name} description={charity.description} />
+              </Col>
+            })}
           </Row>
         </Container>
         <Container>
