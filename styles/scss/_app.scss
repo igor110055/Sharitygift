@@ -2103,12 +2103,8 @@ html {
   color: $primary;
 }
 
-.Mui-focused {
-  color: $primary;
-}
-
-.css-u9osun {
-  color: $primary;
+.css-u9osun.Mui-focused {
+  color: $primary !important;
 }
 
 .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
