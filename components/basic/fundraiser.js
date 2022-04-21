@@ -6,7 +6,11 @@ import Image from "next/image";
 import PropTypes from 'prop-types';  
 
 const Fundraiser = (props) => {
-
+    const truncate = ( str, n, useWordBoundary ) => {
+        if (str.length <= n) { return str; }
+        const subString = str.substr(0, n-1);
+        return ((useWordBoundary?subString.substr(0, subString.lastIndexOf(" ")):subString) + "...");
+    }
   return (
     <div>
         <Card className="card-shadow">
@@ -68,7 +72,6 @@ const Fundraiser = (props) => {
                         </Link>
                     </Col>
                 </Row>:""}
-                
             </CardBody>
         </Card>
     </div>
