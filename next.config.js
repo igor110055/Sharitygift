@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: false,
   images: {
-    formats: ['image/webp', 'image/jpeg'],
+    formats: ['image/webp'],
     domains: [
       'res.cloudinary.com'
     ],
