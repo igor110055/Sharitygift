@@ -52,7 +52,7 @@ export default function Donate(props) {
         const { ethereum } = window;
 
         if (!ethereum) {
-            alert("Make sure you have Metamast installed!");
+            toast.error("Make sure you have Metamask installed!");
             return;
         } else {
             console.log("Wallet exists! We're ready to go!");
@@ -64,7 +64,7 @@ export default function Donate(props) {
             console.log("Found an authorized account:", account);
             setCurrentAccount(account);
         } else {
-            alert("No authorized account found! Please connnect wallet first.");
+            toast.error("No authorized account found! Please connnect wallet first.");
         }
     }
 
@@ -72,7 +72,7 @@ export default function Donate(props) {
         const { ethereum } = window;
 
         if (!ethereum) {
-            alert("Please install Metamask!");
+            toast.error("Please install Metamask!");
             return;
         }
 

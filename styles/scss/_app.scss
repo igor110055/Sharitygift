@@ -262,6 +262,10 @@ html body {
     padding-top: 30px;
   }
 
+  .p-t-60 {
+    padding-top: 60px;
+  }
+
   .p-t-102 {
     padding-top: 102px;
   }
@@ -2093,4 +2097,20 @@ a.btn-outline-success {
 
 html {
   scroll-behavior: smooth;
+}
+
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: $primary;
+}
+
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
+  color: $primary;
+}
+
+.MuiOutlinedInput-notchedOutline{
+  border-color: $primary !important;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  color: $primary;
 }

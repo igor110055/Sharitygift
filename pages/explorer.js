@@ -4,16 +4,43 @@ import React, { useState, useEffect } from "react"
 
 import { useUser } from '@auth0/nextjs-auth0';
 
-import { Spinner } from "reactstrap";
+import { Spinner, Button, Container } from "reactstrap";
 
 import MainBanner from "../components/custom/sections/mainbanner";
 import CharityRaisers from "../components/custom/sections/charityraisers";
+import TextField from '@mui/material/TextField';
 
 export default function Explorer(props) {
   const { user, error, isLoading } = useUser();
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
   const [keys, setKeys] = useState(null);
+  const [showAllCategory, setShowAllCategory] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const [charities, setCharities] = useState({});
+  
+  const handleSearch = (e) => {
+    if(e.key === 'Enter'){
+        findCharity()
+    }
+  }
+  const findCharity = async () => {
+    const arrSearchValue = searchValue.split(" ")
+    let newCharities = {};
+    for(let key in charities){
+        const newKey = await charities[key].filter((item) => {
+            for(let j = 0; j < arrSearchValue.length; j ++){
+                if(item['name'] && item['name'].toLowerCase().includes(arrSearchValue[j].toLowerCase()) || item['description'] && item['description'].toLowerCase().includes(arrSearchValue[j].toLowerCase())){
+                    return true;
+                }
+            }
+            return false;
+        }) 
+        if(newKey && newKey.length > 0)
+            newCharities[key] = newKey
+    }
+    setCharities(newCharities)
+  }
   useEffect(async () => {
     if(user){
       console.log(user)
@@ -31,8 +58,16 @@ export default function Explorer(props) {
   useEffect(async () => {
     if(data.checkedItems)
       setKeys(Object.keys(data.checkedItems));
-    console.log(props.charities)
+    setCharities(props.charities)
   }, [data]);
+
+  useEffect(async () => {
+    if(searchValue == '')
+      setCharities(props.charities)
+    else{
+      setShowAllCategory(true)
+    }
+  }, [searchValue]);
 
   return (
     <div>
@@ -47,27 +82,48 @@ export default function Explorer(props) {
       </Head>
       <div className="p-t-102">
         <MainBanner />
+        <div className="spacer text-center p-t-60 p-b-10">
+            <Container>
+                <TextField id="outlined-basic" label="Find Charities" variant="outlined" style={{width: '100%'}} value={searchValue} onKeyDown={handleSearch} onChange={(e) => setSearchValue(e.target.value)} InputProps={{endAdornment: <Button className="btn btn-primary" onClick={findCharity}>Find</Button>}} />
+            </Container>
+        </div>
         {loading?
         <div className="spacer text-center">
           <Spinner>
             Loading...
           </Spinner></div>:""}
+          
           <div id="donate-crypto">
-            {!loading?(keys && keys.map((item) => {
+              
+            {!loading && !showAllCategory?(keys && keys.map((item) => {
               if(data.checkedItems[item] == true){
-                return (<CharityRaisers key={item} title={item} charities={props.charities[item]} />)
+                return (<CharityRaisers key={item+"5"} title={item} charities={charities[item]} />)
               }
             })):""}
-            {!loading?(!keys && Object.keys(props.charities).slice(0,3).map((item) => {
-              return (<CharityRaisers key={item} title={item} charities={props.charities[item]} />)
+            {!loading && !showAllCategory?(!keys && Object.keys(charities) && Object.keys(charities).slice(0,3).map((item) => {
+              return (<CharityRaisers key={item+"4"} title={item} charities={charities[item]} />)
+            }
+            )):""}
+            {!loading && showAllCategory?(keys && keys.map((item) => {
+              if(data.checkedItems[item] == true && charities[item]){
+                return (<CharityRaisers key={item+"3"} title={item} charities={charities[item]} />)
+              }
+            })):""}
+            {!loading && showAllCategory?(keys && Object.keys(charities).map((item) => {
+              if(keys.includes(item) && data.checkedItems[item] == true) return;
+              return (<CharityRaisers key={item+"1"} title={item} charities={charities[item]} />)
+            }
+            )):""}
+            {!loading && showAllCategory?(!keys && Object.keys(charities).map((item) => {
+              return (<CharityRaisers key={item+"2"} title={item} charities={charities[item]} />)
             }
             )):""}
           </div>
         {!loading?
         <div className="align-center">
           <Link href="#">
-            <a className="btn btn-lg m-t-30 btn-alternate p-l-40 p-r-40 font-14">
-              Show more categories
+            <a className="btn btn-lg m-t-30 btn-alternate p-l-40 p-r-40 font-14" onClick={() => setShowAllCategory(1-showAllCategory)}>
+              Show {showAllCategory?'less':'all'} categories
             </a>
           </Link>
         </div>:""}
