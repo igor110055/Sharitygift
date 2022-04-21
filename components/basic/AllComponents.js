@@ -10,7 +10,6 @@ import Cards from "./cards";
 import Dropdowns from "./dropdowns";
 import PageForm from "./form";
 import PageTable from "./table";
-import Notification from "./notification";
 import TooltipPopover from "./tooltip-popover";
 import Typography from "./typography";
 import JsComponents from "./js-components";
@@ -29,7 +28,6 @@ const AllComponents = () => {
       <Dropdowns />
       <PageForm />
       <PageTable />
-      <Notification />
       <TooltipPopover />
       <Typography />
       <JsComponents />
