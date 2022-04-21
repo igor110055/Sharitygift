@@ -16,7 +16,7 @@ const MainBanner = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 </h5>
                 <Button
-                  href="/#"
+                  href="#donate-crypto"
                   className="btn btn-light m-r-20 btn-md m-t-30"
                 >
                   Donate Crypto

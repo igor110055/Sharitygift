@@ -20,7 +20,7 @@ const Fundraiser = (props) => {
     <div>
         <Card className="card-shadow">
             <a href="#" className="img-ho top-fundraiser">
-                <span className="donee-location"><i className="fa fa-briefcase "></i><label>{props.ein}</label></span>
+                <span className="donee-location"><i className="fa fa-map-marker "></i><label>{props.ein}</label></span>
                 <Image
                     className="card-img-top"
                     src={props.imgSrc}

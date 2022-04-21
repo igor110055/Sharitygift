@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import { ethers } from 'ethers';
 import Link from "next/link";
 import { Row, Col, Container, Card, CardBody, Form, FormGroup, Label, Input, Button, InputGroup, InputGroupText, Toast, ToastBody, ToastHeader } from "reactstrap";
+import toast, { Toaster } from 'react-hot-toast';
 
 import contract from '../../contracts/contract.json';
 
@@ -51,7 +52,7 @@ export default function Donate(props) {
         const { ethereum } = window;
 
         if (!ethereum) {
-            console.log("Make sure you have Metamast installed!");
+            alert("Make sure you have Metamast installed!");
             return;
         } else {
             console.log("Wallet exists! We're ready to go!");
@@ -63,7 +64,7 @@ export default function Donate(props) {
             console.log("Found an authorized account:", account);
             setCurrentAccount(account);
         } else {
-            console.log("No authorized account found!");
+            alert("No authorized account found! Please connnect wallet first.");
         }
     }
 
@@ -83,13 +84,19 @@ export default function Donate(props) {
             console.log(err);
         }
     }
-
     const donateHandler = async () => {
+        checkWalletIsConnected()
         try {
             const { ethereum } = window;
 
             if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum);
+                const { chainId } = await provider.getNetwork()
+                console.log(chainId)
+                if(chainId !== 4){
+                    toast.error("Please make sure that you choose Rinkeby network on your wallet")
+                    return
+                }
                 const signer = provider.getSigner();
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
@@ -99,17 +106,23 @@ export default function Donate(props) {
                     });
                     // let nftTxn = await nftContract.hiddenURI();
                     // console.log(nftTxn);
-
                     console.log("Mining... please wait");
+                    toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://rinkeby.etherscan.io/tx/"+nftTxn.hash} target="_blank">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
                     await nftTxn.wait();
                 } catch ( err ) {
-                    const code = err.data.replace('Reverted ','');
-                    console.log({err});
-                    let reason = ethers.utils.toUtf8String('0x' + code.substr(138));
-                    console.log('revert reason:', reason);
+                    if(err.code == "INSUFFICIENT_FUNDS"){
+                        toast.error((<span>Insufficient fund. You can deposit <a href="#">here</a></span>))
+                    } else if(err.code == "UNPREDICTABLE_GAS_LIMIT"){
+                        toast.error('Unpredictable gas limit. Input valid amount')
+                    } else if(err.code == "4001"){
+                        toast.error("Transaction has been rejected")
+                    }
+                    console.log(err)
+                    // const code = err.data.replace('Reverted ','');
+                    // console.log({err});
+                    // let reason = ethers.utils.toUtf8String('0x' + code.substr(138));
+                    // console.log('revert reason:', reason);
                 }
-                
-
                 console.log(`Mined, transaction hash: ${nftTxn.hash}`);
             } else {
                 console.log("Ethereum object does not exit");
@@ -131,7 +144,28 @@ export default function Donate(props) {
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
       </Head>
       <div className="p-t-102">
-        
+        <Toaster position="top-center"
+                reverseOrder={false}
+                gutter={8}
+                containerClassName=""
+                containerStyle={{}}
+                toastOptions={{
+                    // Define default options
+                    className: '',
+                    duration: 7000,
+                    style: {
+                        width: '100%',
+                        height: '100px',
+                    },
+                    // Default options for specific types
+                    success: {
+                        duration: 20000,
+                        theme: {
+                            primary: 'green',
+                            secondary: 'black',
+                        },
+                    },
+                }} ></Toaster>
         <Container className="m-t-20">
           <Row>
             <Col md="12">
