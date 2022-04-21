@@ -107,7 +107,7 @@ export default function Donate(props) {
                     // let nftTxn = await nftContract.hiddenURI();
                     // console.log(nftTxn);
                     console.log("Mining... please wait");
-                    toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://rinkeby.etherscan.io/tx/"+nftTxn.hash} target="_blank">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
+                    toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://rinkeby.etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
                     await nftTxn.wait();
                 } catch ( err ) {
                     if(err.code == "INSUFFICIENT_FUNDS"){
