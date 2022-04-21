@@ -14,7 +14,7 @@ const CharityRaisers = (props) => {
   }
   return (
     <div>
-      <div className="spacer">
+      <div className="spacer p-b-0">
         <Container>
           <Row>
             <Col md="12">

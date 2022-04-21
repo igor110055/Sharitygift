@@ -7,7 +7,6 @@ import { Row, Col, Container, Card, CardBody, Form, FormGroup, Label, Input, But
 import contract from '../../contracts/contract.json';
 
 import Fundraiser from "../../components/basic/fundraiser"
-import img1 from "../../assets/images/portfolio/img7.jpg";
 
 const contractAddress = "0xF4d1c3C79BC78F7ecA41c01E9476E27A0465914f";
 const abi = contract.abi;
