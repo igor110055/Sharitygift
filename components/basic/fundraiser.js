@@ -29,7 +29,7 @@ const Fundraiser = (props) => {
                 <h5 className="font-medium m-b-0">
                     <p>{props.title}</p>
                 </h5>
-                <p className="m-b-0 font-14">{props.description}</p>
+                <p className="m-b-0 font-14">{props.buttonShow?truncate(props.description, 350, true):props.description}</p>
                 <Row>
                     <Col md={9} sm={9} xs={9}>
                         <ReactSlider
