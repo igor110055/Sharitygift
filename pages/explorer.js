@@ -8,8 +8,6 @@ import { Spinner } from "reactstrap";
 
 import MainBanner from "../components/custom/sections/mainbanner";
 import CharityRaisers from "../components/custom/sections/charityraisers";
-import MedicalRaisers from "../components/custom/sections/medicalraisers";
-import AnimalRaisers from "../components/custom/sections/animalraisers";
 
 export default function Explorer(props) {
   const { user, error, isLoading } = useUser();
@@ -154,7 +152,6 @@ export async function getStaticProps() {
     const json = await charity.json()
     charities[categories[i]] = json['nonprofits']
   }
-
   return {
     props: {
       charities,
