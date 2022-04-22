@@ -54,10 +54,10 @@ export default function Donate(props) {
         setUSD(e.target.value)
         setETH(e.target.value / rate)
     }
-    const saveTransaction = async (eth) => {
+    const saveTransaction = async (eth, txnhash) => {
         const res = await fetch("/api/transaction", {
             method: 'post',
-            body: JSON.stringify({...inputValues, ...props, eth})
+            body: JSON.stringify({...inputValues, ...props, eth, txnhash})
         });
     }
     const handleFocus = (event) => event.target.select();
@@ -128,7 +128,7 @@ export default function Donate(props) {
                     });
                     console.log("Mining... please wait");
                     toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://rinkeby.etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
-                    saveTransaction(Number(eth).toFixed(4))
+                    saveTransaction(Number(eth).toFixed(4), nftTxn.hash)
                     await nftTxn.wait();
                 } catch ( err ) {
                     if(err.code == "INSUFFICIENT_FUNDS"){
