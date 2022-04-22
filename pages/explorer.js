@@ -31,7 +31,7 @@ export default function Explorer(props) {
     for(let key in props.charities){
         const newKey = await props.charities[key].filter((item) => {
             for(let j = 0; j < arrSearchValue.length; j ++){
-                if(item['name'] && item['name'].toLowerCase().includes(arrSearchValue[j].toLowerCase()) || item['description'] && item['description'].toLowerCase().includes(arrSearchValue[j].toLowerCase())){
+                if(item['nonprofit']['name'] && item['nonprofit']['name'].toLowerCase().includes(arrSearchValue[j].toLowerCase()) || item['nonprofit']['description'] && item['nonprofit']['description'].toLowerCase().includes(arrSearchValue[j].toLowerCase())){
                     return true;
                 }
             }
@@ -210,7 +210,7 @@ export async function getStaticProps() {
   for ( let i = 0; i < categories.length; i ++ ){
     const charity = await fetch("https://api.www.every.org/api/search_v0?query=&causes="+categories[i]+"&distance=100&take=150&skip=0&prioritizeCauseCount=true&includeCount=true");
     const json = await charity.json()
-    charities[categories[i]] = json['nonprofits']
+    charities[categories[i]] = json['data']['nonprofits']
   }
 //     charities = {
 //     "aapi-led": [

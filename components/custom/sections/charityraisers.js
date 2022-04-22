@@ -25,13 +25,13 @@ const CharityRaisers = (props) => {
             {!showAll && props.charities?props.charities.slice(0,3).map((charity, i) => {
               return (
               <Col md="4">
-                <Fundraiser key={i} imgSrc={charity.coverImageCloudinaryId ? "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_459,h_211/q_auto,f_auto,fl_progressive/"+charity.coverImageCloudinaryId:""} buttonShow={true} title={charity.name} description={charity.description?charity.description:""} locationAddress={charity.locationAddress} />
+                <Fundraiser key={i} imgSrc={charity['nonprofit'].coverImageCloudinaryId ? "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_459,h_211/q_auto,f_auto,fl_progressive/"+charity['nonprofit'].coverImageCloudinaryId:""} buttonShow={true} title={charity['nonprofit'].name} description={charity['nonprofit'].description?charity['nonprofit'].description:""} locationAddress={charity['nonprofit'].locationAddress} />
               </Col>
               )
             }):props.charities.slice(0,9).map((charity, i) => {
               return (
               <Col md="4">
-                <Fundraiser key={i} imgSrc={charity.coverImageCloudinaryId ? "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_459,h_211/q_auto,f_auto,fl_progressive/"+charity.coverImageCloudinaryId:""} buttonShow={true} title={charity.name} description={charity.description?charity.description:""} locationAddress={charity.locationAddress} />
+                <Fundraiser key={i} imgSrc={charity['nonprofit'].coverImageCloudinaryId ? "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_459,h_211/q_auto,f_auto,fl_progressive/"+charity['nonprofit'].coverImageCloudinaryId:""} buttonShow={true} title={charity['nonprofit'].name} description={charity['nonprofit'].description?charity['nonprofit'].description:""} locationAddress={charity['nonprofit'].locationAddress} />
               </Col>
               )
             })}
