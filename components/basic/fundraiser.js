@@ -19,7 +19,7 @@ const Fundraiser = (props) => {
   return (
     <div>
         <Card className="card-shadow">
-            <a href="#" className="img-ho top-fundraiser">
+            <a href="#" className="img-ho top-fundraiser" style={{height: 189}}>
                 <span className="donee-location"><i className="fa fa-map-marker "></i><label style={{display: "inline", fontSize: 15}}>{props.locationAddress?props.locationAddress:"Worldwide"}</label></span>
                 {props.imgSrc?<Image
                     className="card-img-top"
