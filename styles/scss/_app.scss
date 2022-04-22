@@ -2117,3 +2117,16 @@ html {
 .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
   color: $primary;
 }
+
+.social-donate {
+  font-size: 20px;
+  background-color: $primary;
+  padding: 1px 9px;
+  border-radius: 50px;
+  color: $white;
+  &:hover {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: $white;
+  }
+}

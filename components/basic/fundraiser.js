@@ -60,7 +60,15 @@ const Fundraiser = (props) => {
                     </Col>
                 </Row>
                 {props.buttonShow?<Row>
-                    <Col md={12} style={{textAlign: "right"}}>
+                    <Col md={6} sm={6} xs={6} style={{paddingTop: 5}}>
+                        <a className="social-donate" target="_blank" rel="noreferrer" href={"https://facebook.com/"+props.facebookUrl} >
+                            <i class="fa fa-facebook" style={{fontSize: 16}}></i>
+                        </a>
+                        <a className="social-donate" target="_blank" rel="noreferrer" href={"https://facebook.com/"+props.facebookUrl} >
+                            <i class="fa fa-facebook" style={{fontSize: 16}}></i>
+                        </a>
+                    </Col>
+                    <Col md={6} sm={6} xs={6} style={{textAlign: "right"}}>
                         <Link href={{
                             pathname: `/donation/[title]`,
                             query: {
