@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb';
 import nextConnect from 'next-connect';
 
-const client = new MongoClient("mongodb+srv://jona:sharedpassword@cluster0.bejdq.mongodb.net", {
+const client = new MongoClient(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -9,7 +9,7 @@ const client = new MongoClient("mongodb+srv://jona:sharedpassword@cluster0.bejdq
 async function database(req, res, next) {
   await client.connect();
   req.dbClient = client;
-  req.db = client.db("sharity");
+  req.db = client.db(process.env.DB_NAME);
   return next();
 }
 
