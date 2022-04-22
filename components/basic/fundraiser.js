@@ -77,7 +77,8 @@ const Fundraiser = (props) => {
                                 title: props.title.replace(' ', '-'),
                                 locationAddress: props.locationAddress,
                                 facebookUrl: props.facebookUrl,
-                                numSupport: props.numSupport
+                                numSupport: props.numSupport,
+                                backImg: props.backImg
                             },
                         }}>
                             <a

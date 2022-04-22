@@ -9,6 +9,8 @@ import contract from '../../contracts/contract.json';
 
 import Fundraiser from "../../components/basic/fundraiser"
 
+import DonateBanner from "../../components/custom/sections/donatebanner";
+
 const contractAddress = "0xF4d1c3C79BC78F7ecA41c01E9476E27A0465914f";
 const abi = contract.abi;
 
@@ -144,6 +146,7 @@ export default function Donate(props) {
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
       </Head>
       <div className="p-t-102">
+      <DonateBanner imgSrc={props.backImg} />
         <Toaster position="top-center"
                 reverseOrder={false}
                 gutter={8}
@@ -167,6 +170,7 @@ export default function Donate(props) {
                     },
                 }} ></Toaster>
         <Container className="m-t-20">
+            
           <Row>
             <Col md="12">
               <h3 className="midtitle">Donate</h3>
