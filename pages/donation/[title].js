@@ -145,7 +145,7 @@ export default function Donate(props) {
         <link rel="icon" href="/favicon.png" />
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
       </Head>
-      <div className="p-t-102">
+      <div>
       <DonateBanner imgSrc={props.backImg} />
         <Toaster position="top-center"
                 reverseOrder={false}
@@ -169,13 +169,12 @@ export default function Donate(props) {
                         },
                     },
                 }} ></Toaster>
-        <Container className="m-t-20">
-            
-          <Row>
-            <Col md="12">
-              <h3 className="midtitle">Donate</h3>
-            </Col>
-          </Row>
+        <Container className="donate-container">
+            <Row>
+                <Col md="12">
+                    <h3 className="text-primary font-weight-bold">Donate Crypto</h3>
+                </Col>
+            </Row>
           <Row className="m-t-20">
             <Col md="4">
               <Fundraiser imgSrc={props.imgSrc} buttonShow={false} title={props.title} description={props.description} facebookUrl={props.facebookUrl} locationAddress={props.locationAddress} numSupport={props.numSupport} />
@@ -243,8 +242,8 @@ export default function Donate(props) {
                         </InputGroup>
                         
                     </FormGroup>
-                    <FormGroup className="col-md-2">
-                        <Button type="button" className="btn btn-icon waves-effect waves-light" onClick={() => setDirection(1-ethusd)}><i className="fa fa-sort"></i></Button>
+                    <FormGroup className="col-md-2 p-l-0">
+                        <Button type="button" className="btn btn-icon waves-effect waves-light p-l-7 p-r-7" onClick={() => setDirection(1-ethusd)}><i className="fa fa-sort"></i></Button>
                     </FormGroup>
                     {!currentAccount ? <FormGroup className="col-md-12">
                         <Button type="button" className="btn btn-icon waves-effect waves-light" onClick={connectWalletHandler} >Connect Wallet</Button>
@@ -260,6 +259,7 @@ export default function Donate(props) {
             </Col>
           </Row>
         </Container>
+        <p className="p-b-40"></p>
       </div>
       
     </div>

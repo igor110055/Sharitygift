@@ -210,6 +210,10 @@ html body {
     padding-left: 0px;
   }
 
+  .p-l-7 {
+    padding-left: 7px;
+  }
+
   .p-l-10 {
     padding-left: 10px;
   }
@@ -224,6 +228,10 @@ html body {
 
   .p-r-0 {
     padding-right: 0px;
+  }
+
+  .p-r-7 {
+    padding-right: 7px;
   }
 
   .p-r-10 {
@@ -2151,4 +2159,41 @@ html {
 
 .img-ho.no-image {
   height: 189px
+}
+
+.donate-container {
+  margin-top: -170px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: white;
+  padding: 50px 50px;
+  max-width: fit-content;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media (min-width: 206px) {
+  .donate-container {
+    margin-top: -170px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    padding: 15px 15px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+}
+
+@media (min-width: 958px) {
+  .donate-container {
+    margin-top: -170px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: white;
+    padding: 50px 50px;
+    max-width: fit-content;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
 }
