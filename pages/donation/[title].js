@@ -99,6 +99,10 @@ export default function Donate(props) {
         }
     }
     const donateHandler = async () => {
+        if(!anonym && (!inputValues['email'] || !inputValues['firstname'] || !inputValues['lastname'])){
+            toast.error("Please input the information")
+            return
+        }
         checkWalletIsConnected()
         try {
             const { ethereum } = window;
@@ -114,10 +118,7 @@ export default function Donate(props) {
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
                 try{
-                    if(!anonym && (!inputValues['email'] || !inputValues['firstname'] || !inputValues['lastname'])){
-                        toast.error("Please input the information")
-                        return
-                    }
+                    
                     let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
                         value: ethers.utils.parseEther(Number(eth).toFixed(3).toString())
                     });
