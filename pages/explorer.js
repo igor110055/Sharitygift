@@ -215,6 +215,7 @@ export async function getStaticProps() {
             }
         });
         const jsontext = await charity.text()
+        console.log("ddd", jsontext)
         const json = JSON.parse(jsontext)
         charities[categories[i]] = json['data']['nonprofits']
     }
