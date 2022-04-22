@@ -31,11 +31,11 @@ export default function Explorer(props) {
     for(let key in props.charities){
         const newKey = await props.charities[key].filter((item) => {
             for(let j = 0; j < arrSearchValue.length; j ++){
-                if(item['nonprofit']['name'] && item['nonprofit']['name'].toLowerCase().includes(arrSearchValue[j].toLowerCase()) || item['nonprofit']['description'] && item['nonprofit']['description'].toLowerCase().includes(arrSearchValue[j].toLowerCase())){
-                    return true;
+                if(!(item['nonprofit']['name'] && item['nonprofit']['name'].toLowerCase().includes(arrSearchValue[j].toLowerCase()) || item['nonprofit']['description'] && item['nonprofit']['description'].toLowerCase().includes(arrSearchValue[j].toLowerCase()))){
+                    return false;
                 }
             }
-            return false;
+            return true;
         }) 
         if(newKey && newKey.length > 0)
             newCharities[key] = newKey
