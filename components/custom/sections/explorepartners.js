@@ -14,7 +14,7 @@ const ExplorePartners = () => {
             <Col md="12">
               <h2 className="midtitle">Become a Partner</h2>
               <p className="text-black p-t-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                By partnering with Sharity, your organization will be cast into the forefront of the charity industry&apos;s quickly evolving sociological and technological advancements. Our charity partners receive a spectacular opportunity to open their doors to new revenue streams and new donors who can drastically help fund their mission. All charities are able to list on Sharity at NO COST whatsoever! Sharity wants to cut out the middle man and connect you directly to donors who want to help your cause. All we charge is a small transaction fee on all donations made on our platform. No costs, no middle man, no nonsense.  We hope to have your charity become a part of our family
               </p>
             </Col>
           </Row>

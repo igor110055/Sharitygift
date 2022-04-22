@@ -6,7 +6,7 @@ const GeneralBanner = (props) => {
     <div className="main-banner" id="coming">
       <Container className="py-5 m-t-80">
         <Row>
-          <Col md="6">
+          <Col md="10">
             <div className="d-flex align-items-center">
               <div>
                 <h1 className="title text-white font-weight-bold">

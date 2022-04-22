@@ -8,11 +8,11 @@ const SubInfobar = () => {
       <Container className="py-4">
         <Row className="m-t-20">
             <Col sm={12}>
-                <h2 className="midtitle text-white"><b>Lorem ipsum dolor sit amet, Crypto Donations</b></h2>
+                <h2 className="midtitle text-white"><b>Welcome to Sharity, Crypto Donations</b></h2>
             </Col>
         </Row>
         <p className="text-white p-t-10 p-b-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          The Sharity donation platform is a one-stop shop where charity organizations are fully organized, so you don&apos;t have to worry about the funds reaching the proper hands. It is our mission to make the donation process much simpler and secure
         </p>
       </Container>
     </div>

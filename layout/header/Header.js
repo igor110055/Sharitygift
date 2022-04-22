@@ -88,6 +88,32 @@ const Header = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
+                  <Link href="/donors">
+                    <a
+                      className={
+                        router.pathname == "/donors"
+                          ? "text-danger nav-link"
+                          : "nav-link"
+                      }
+                    >
+                      DONORS
+                    </a>
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link href="/buycrypto">
+                    <a
+                      className={
+                        router.pathname == "/buycrypto"
+                          ? "text-danger nav-link"
+                          : "nav-link"
+                      }
+                    >
+                      BUY CRYPTO
+                    </a>
+                  </Link>
+                </NavItem>
+                <NavItem>
                   <Link href="/#">
                     <a
                       className={
@@ -126,19 +152,7 @@ const Header = () => {
                     </a>
                   </Link>
                 </NavItem>
-                <NavItem>
-                  <Link href="/donors">
-                    <a
-                      className={
-                        router.pathname == "/donors"
-                          ? "text-danger nav-link"
-                          : "nav-link"
-                      }
-                    >
-                      DONORS
-                    </a>
-                  </Link>
-                </NavItem>
+                
                 <NavItem>
                   <Link href="/resources">
                     <a

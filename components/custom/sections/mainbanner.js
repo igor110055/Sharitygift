@@ -10,10 +10,10 @@ const MainBanner = () => {
             <div className="d-flex align-items-center">
               <div>
                 <h2 className="title text-white font-weight-bold">
-                    Browse Fundraisers
+                    Browse Charities
                 </h2>
                 <h5 className="subtitle font-light text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    Find your favorite chairty and donate!
                 </h5>
                 <Button
                   href="#donate-crypto"

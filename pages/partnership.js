@@ -21,11 +21,11 @@ export default function Partnership() {
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
       </Head>
       <div className="p-t-102">
-        <GeneralBanner title="Lorem ispun doler partner" />
-        <Submenu />
+        <GeneralBanner title="Partnership" />
+        {/* <Submenu />
         
-        <PartnershipPortfolio />
-        <Infobar />
+        <PartnershipPortfolio /> */}
+        {/* <Infobar /> */}
         <ExplorePartners />
         <p className="p-t-20"></p>
       </div>      

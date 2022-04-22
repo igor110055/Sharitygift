@@ -57,7 +57,7 @@ export default function Donate(props) {
     const saveTransaction = async (eth) => {
         const res = await fetch("/api/transaction", {
             method: 'post',
-            body: JSON.stringify({...inputValues, eth})
+            body: JSON.stringify({...inputValues, ...props, eth})
         });
     }
     const handleFocus = (event) => event.target.select();
@@ -105,7 +105,7 @@ export default function Donate(props) {
             return;
         }
     }
-    
+
     const donateHandler = async () => {
         checkInputInfo()
         checkWalletIsConnected()
@@ -123,13 +123,12 @@ export default function Donate(props) {
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
                 try{
-                    
                     let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
-                        value: ethers.utils.parseEther(Number(eth).toFixed(3).toString())
+                        value: ethers.utils.parseEther(Number(eth).toFixed(4).toString())
                     });
                     console.log("Mining... please wait");
                     toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://rinkeby.etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
-                    saveTransaction(Number(eth).toFixed(3))
+                    saveTransaction(Number(eth).toFixed(4))
                     await nftTxn.wait();
                 } catch ( err ) {
                     if(err.code == "INSUFFICIENT_FUNDS"){

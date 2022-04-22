@@ -5,7 +5,7 @@ import Link from "next/link";
 const Infobar = () => {
   return (
     <div className="infobar" id="coming">
-      <Container className="py-4 mt-4">
+      <Container className="py-4">
         <Row>
           <Col md="4">
             <p className="p-t-10"></p>
@@ -24,7 +24,7 @@ const Infobar = () => {
             <div className="d-flex align-items-center">
               <div>
                 <h3 className="font-light text-white">
-                    Lorem ipsum dolor sit amet,<br /> consectetur adipiscing elit
+                    Take your opportunity,<br /> to become part of Sharity&apos;s family
                 </h3>
                 <br />
                     <Link href="#">
