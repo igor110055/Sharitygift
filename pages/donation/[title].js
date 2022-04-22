@@ -98,11 +98,16 @@ export default function Donate(props) {
             console.log(err);
         }
     }
-    const donateHandler = async () => {
+
+    const checkInputInfo = async () => {
         if(!anonym && (!inputValues['email'] || !inputValues['firstname'] || !inputValues['lastname'])){
-            toast.error("Please input the information")
-            return
+            toast.error("Please input the information");
+            return;
         }
+    }
+    
+    const donateHandler = async () => {
+        checkInputInfo()
         checkWalletIsConnected()
         try {
             const { ethereum } = window;
