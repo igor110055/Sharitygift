@@ -21,13 +21,13 @@ const Fundraiser = (props) => {
         <Card className="card-shadow">
             <a href="#" className="img-ho top-fundraiser">
                 <span className="donee-location"><i className="fa fa-map-marker "></i><label style={{display: "inline", fontSize: 15}}>{props.locationAddress?props.locationAddress:"Worldwide"}</label></span>
-                <Image
+                {props.imgSrc?<Image
                     className="card-img-top"
                     src={props.imgSrc}
                     alt="wrappixel kit"
                     width={459}
                     height={211}
-                />
+                />:""}
                 
             </a>
             <CardBody>
@@ -84,7 +84,16 @@ const Fundraiser = (props) => {
                             </a>
                         </Link>
                     </Col>
-                </Row>:""}
+                </Row>:<Row>
+                    <Col md={6} sm={6} xs={6} style={{paddingTop: 6}}>
+                        <a className="social-donate" target="_blank" rel="noreferrer" href={"https://facebook.com/"+props.facebookUrl} >
+                            <i className="fa fa-facebook" style={{fontSize: 16}}></i>
+                        </a>&nbsp;
+                        <a className="social-heart" href="#" title={"Supporters: "+props.numSupport} >
+                            <i className="fa fa-heart" style={{fontSize: 16}}></i>
+                        </a>
+                    </Col>
+                </Row>}
             </CardBody>
         </Card>
     </div>
