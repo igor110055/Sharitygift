@@ -75,6 +75,9 @@ const Fundraiser = (props) => {
                                 imgSrc: props.imgSrc,
                                 description: props.description,
                                 title: props.title.replace(' ', '-'),
+                                locationAddress: props.locationAddress,
+                                facebookUrl: props.facebookUrl,
+                                numSupport: props.numSupport
                             },
                         }}>
                             <a
