@@ -27,7 +27,7 @@ const Fundraiser = (props) => {
                     alt="wrappixel kit"
                     width={459}
                     height={211}
-                />:""}
+                />:<div style={{display: "inlineBlock", maxWidth: "100%", overflow: "hidden", position: "relative", boxSizing: "border-box", margin: 0}}><div style={{boxSizing: "border-box", display: "block", maxWidth: "100%"}}><img alt="" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDU5IiBoZWlnaHQ9IjIxMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" style={{maxWidth: "100%", display: "block", margin: 0, border: "none", padding: 0, visibility: "visible"}} data-xblocker="passed" /></div><noscript></noscript></div>}
                 
             </a>
             <CardBody>
