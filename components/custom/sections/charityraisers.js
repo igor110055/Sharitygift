@@ -25,13 +25,13 @@ const CharityRaisers = (props) => {
             {!showAll && props.charities?props.charities.slice(0,3).map((charity, i) => {
               return (
               <Col md="4">
-                <Fundraiser key={i} imgSrc={charity.logoUrl.replace(",w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive", ",w_459,h_459")} buttonShow={true} title={charity.name} description={charity.description} />
+                <Fundraiser key={i} imgSrc={charity.logoUrl ? charity.logoUrl.replace(",w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive", ",w_459,h_459"):""} buttonShow={true} title={charity.name} description={charity.description?charity.description:""} />
               </Col>
               )
             }):props.charities.map((charity, i) => {
               return (
               <Col md="4">
-                <Fundraiser key={i} imgSrc={charity.logoUrl.replace(",w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive", ",w_459,h_459")} buttonShow={true} title={charity.name} description={charity.description} />
+                <Fundraiser key={i} imgSrc={charity.logoUrl ? charity.logoUrl.replace(",w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive", ",w_459,h_459"):""} buttonShow={true} title={charity.name} description={charity.description?charity.description:""} />
               </Col>
               )
             })}
