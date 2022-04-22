@@ -61,7 +61,7 @@ export default function Donors() {
                             <ul className="text-black">
                                 <li>The Sharity platform is a nonprofit organization.</li>
                                 <li>The platform is a one-stop shop to house charities across nations.</li>
-                                <li>Because of the blockchain's capacity, donations in crypto are highly organized and easily traceable.</li>
+                                <li>Because of the blockchain&apos;s capacity, donations in crypto are highly organized and easily traceable.</li>
                                 <li>Crypto donors pay no capital gains taxes on gifts to 501(c)3 organizations.</li>
                                 <li>Even when donating anonymously, you will have the option to receive a tax receipt for your crypto donation.</li>
                                 <li>Donating in crypto advances awareness and institutional adoption.</li>
