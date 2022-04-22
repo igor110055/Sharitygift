@@ -174,7 +174,7 @@ export default function Donate(props) {
           </Row>
           <Row className="m-t-20">
             <Col md="4">
-              <Fundraiser imgSrc={props.imgSrc} buttonShow={false} title={props.title} description={props.description} />
+              <Fundraiser imgSrc={props.imgSrc} buttonShow={false} title={props.title} description={props.description} facebookUrl={props.facebookUrl} locationAddress={props.locationAddress} numSupport={props.numSupport} />
             </Col>
             <Col md="5">
                 <Form className="row">
@@ -193,6 +193,7 @@ export default function Donate(props) {
                     </FormGroup>
                     <FormGroup className="col-md-12">
                         <Input type="select" id="country" required disabled={anonym} placeholder="Country" >
+                            <option key="-">-</option>
                             {
                                 countries?countries.map((country) => <option key={country.name}>{country.name}</option>):""
                             }
