@@ -24,6 +24,7 @@ export default function Donate(props) {
     const [ethusd, setDirection] = useState(true);
     const [toggleToast, setToggle] = useState(true);
     const [currentAccount, setCurrentAccount] = useState(null);
+    const [inputValues, setInputValues] = useState({});
     // const countries = fetch("https://restcountries.com/v2/all")
     useEffect(async () => {
         const countries = await fetch("https://restcountries.com/v2/all")
@@ -33,6 +34,11 @@ export default function Donate(props) {
         const rate = await rates.json()
         setRate(rate.data.rates.USD)
     }, []);
+
+    const handleInputChange = (e) => {
+        setInputValues({...inputValues, [e.target.name]: e.target.value})
+        console.log(inputValues)
+    }
     const handleChange = (e) => {
         console.log(e.target.value)
         formdata[e.target.id] = e.target.value
@@ -47,6 +53,12 @@ export default function Donate(props) {
     const handleUsdChange = (e) => {
         setUSD(e.target.value)
         setETH(e.target.value / rate)
+    }
+    const saveTransaction = async (eth) => {
+        const res = await fetch("/api/transaction", {
+            method: 'post',
+            body: JSON.stringify({...inputValues, eth})
+        });
     }
     const handleFocus = (event) => event.target.select();
 
@@ -94,7 +106,6 @@ export default function Donate(props) {
             if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const { chainId } = await provider.getNetwork()
-                console.log(chainId)
                 if(chainId !== 4){
                     toast.error("Please make sure that you choose Rinkeby network on your wallet")
                     return
@@ -103,13 +114,16 @@ export default function Donate(props) {
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
                 try{
+                    if(!anonym && (!inputValues['email'] || !inputValues['firstname'] || !inputValues['lastname'])){
+                        toast.error("Please input the information")
+                        return
+                    }
                     let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
                         value: ethers.utils.parseEther(Number(eth).toFixed(3).toString())
                     });
-                    // let nftTxn = await nftContract.hiddenURI();
-                    // console.log(nftTxn);
                     console.log("Mining... please wait");
                     toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://rinkeby.etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
+                    saveTransaction(Number(eth).toFixed(3))
                     await nftTxn.wait();
                 } catch ( err ) {
                     if(err.code == "INSUFFICIENT_FUNDS"){
@@ -186,16 +200,16 @@ export default function Donate(props) {
                         <Label htmlFor="anonym"> Donate Anonymously </Label>
                     </FormGroup>
                     <FormGroup className="col-md-6">
-                        <Input type="text" className="form-control" id="firstname" required disabled={anonym} placeholder="First Name" />
+                        <Input type="text" className="form-control" name="firstname" required disabled={anonym} placeholder="First Name&#42;" onChange={handleInputChange} value={inputValues['firstname'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-6">
-                        <Input type="text" className="form-control" id="lastname" required disabled={anonym} placeholder="Last Name" />
+                        <Input type="text" className="form-control" name="lastname" required disabled={anonym} placeholder="Last Name&#42;" onChange={handleInputChange} value={inputValues['lastname'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-12">
-                        <Input type="text" className="form-control" id="email" required disabled={anonym} placeholder="Email" />
+                        <Input type="text" className="form-control" name="email" required disabled={anonym} placeholder="Email&#42;" onChange={handleInputChange}  value={inputValues['email'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-12">
-                        <Input type="select" id="country" required disabled={anonym} placeholder="Country" >
+                        <Input type="select" name="country" required disabled={anonym} placeholder="Country" onChange={handleInputChange} value={inputValues['country'] || ''}  >
                             <option key="-">-</option>
                             {
                                 countries?countries.map((country) => <option key={country.name}>{country.name}</option>):""
@@ -203,19 +217,19 @@ export default function Donate(props) {
                         </Input>
                     </FormGroup>
                     <FormGroup className="col-md-12">
-                        <Input type="text" className="form-control" id="state" required disabled={anonym} placeholder="State/Province/Region" />
+                        <Input type="text" className="form-control" name="state" required disabled={anonym} placeholder="State/Province/Region" onChange={handleInputChange} value={inputValues['state'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-12">
-                        <Input type="text" className="form-control" id="address1" required disabled={anonym} placeholder="Address 1" />
+                        <Input type="text" className="form-control" name="address1" required disabled={anonym} placeholder="Address 1" onChange={handleInputChange} value={inputValues['address1'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-12">
-                        <Input type="text" className="form-control" id="address2" required disabled={anonym} placeholder="Address 2" />
+                        <Input type="text" className="form-control" name="address2" required disabled={anonym} placeholder="Address 2" onChange={handleInputChange} value={inputValues['address2'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-12">
-                        <Input type="text" className="form-control" id="city" required disabled={anonym} placeholder="City" />
+                        <Input type="text" className="form-control" name="city" required disabled={anonym} placeholder="City" onChange={handleInputChange} value={inputValues['city'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-12">
-                        <Input type="text" className="form-control" id="zip" required disabled={anonym} placeholder="Zip/Postal code" />
+                        <Input type="text" className="form-control" name="zip" required disabled={anonym} placeholder="Zip/Postal code" onChange={handleInputChange} value={inputValues['zip'] || ''} />
                     </FormGroup>
                 </Form>
             </Col>
@@ -243,7 +257,7 @@ export default function Donate(props) {
                         
                     </FormGroup>
                     <FormGroup className="col-md-2 p-l-0">
-                        <Button type="button" className="btn btn-icon waves-effect waves-light p-l-7 p-r-7" onClick={() => setDirection(1-ethusd)}><i className="fa fa-sort"></i></Button>
+                        <Button type="button" className="btn btn-icon waves-effect waves-light" onClick={() => setDirection(1-ethusd)}><i className="fa fa-sort"></i></Button>
                     </FormGroup>
                     {!currentAccount ? <FormGroup className="col-md-12">
                         <Button type="button" className="btn btn-icon waves-effect waves-light" onClick={connectWalletHandler} >Connect Wallet</Button>
