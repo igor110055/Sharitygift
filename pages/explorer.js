@@ -208,7 +208,7 @@ export async function getStaticProps() {
   ]
   let charities = {}
     for ( let i = 0; i < categories.length; i ++ ){
-        const charity = await fetch("https://api.www.every.org/api/search_v0?query=&causes="+categories[i]+"&take=100&skip=0", {
+        const charity = await fetch("https://api.www.every.org/api/search_v0?query=&causes="+categories[i]+"&take=150&skip=0", {
             method: `GET`,
             headers: {
                 Accept: "application/json"
