@@ -207,16 +207,17 @@ export async function getStaticProps() {
     "youth"
   ]
   let charities = {}
-  for ( let i = 0; i < categories.length; i ++ ){
-    const charity = await fetch("https://api.www.every.org/api/search_v0?query=&causes="+categories[i]+"&take=100&skip=0", {
-        method: `GET`,
-        headers: {
-          Accept: "application/text"
-        }
-      });
-    const json = await charity.json()
-    charities[categories[i]] = json['data']['nonprofits']
-  }
+    for ( let i = 0; i < categories.length; i ++ ){
+        const charity = await fetch("https://api.www.every.org/api/search_v0?query=&causes="+categories[i]+"&take=100&skip=0", {
+            method: `GET`,
+            headers: {
+                Accept: "application/text"
+            }
+        });
+        const jsontext = await charity.text()
+        const json = JSON.parse(jsontext)
+        charities[categories[i]] = json['data']['nonprofits']
+    }
   return {
     props: {
       charities,
