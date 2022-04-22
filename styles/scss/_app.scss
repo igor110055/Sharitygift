@@ -2124,6 +2124,9 @@ html {
   padding: 1px 11px;
   border-radius: 50px;
   color: $white;
+  &:hover {
+    color: $white;
+  }
 }
 
 .social-heart {
@@ -2132,6 +2135,9 @@ html {
   padding: 1px 8px;
   border-radius: 50px;
   color: $white;
+  &:hover {
+    color: $white;
+  }
 }
 
 .btn-sm {
