@@ -2052,14 +2052,14 @@ a.btn-outline-success {
 }
 
 .subinfobar {
-  background-color: $warning;
+  background-color: $primary;
 }
 
 .home-banner-1 {
   padding: 30px 35px;
   background-color: $homeprimary;
   color: $white !important;
-  box-shadow: 15px -15px 1px rgba(237, 106, 90, 0.6);
+  // box-shadow: 15px -15px 1px rgba(237, 106, 90, 0.6);
   border-radius: 15px;
 }
 
@@ -2067,7 +2067,7 @@ a.btn-outline-success {
   padding: 30px 35px;
   background-color: $homesecondary;
   color: $white !important;
-  box-shadow: 15px -15px 1px rgba(57, 201, 198, 0.4);
+  // box-shadow: 15px -15px 1px rgba(57, 201, 198, 0.4);
   border-radius: 15px;
 }
 
@@ -2076,13 +2076,18 @@ a.btn-outline-success {
     padding: 30px 10px;
     background-color: $homeprimary;
     color: $white !important;
-    box-shadow: 15px -15px 1px rgba(237, 106, 90, 0.6);
+    // box-shadow: 15px -15px 1px rgba(237, 106, 90, 0.6);
     border-radius: 15px;
   }
 }
 
 .text-homeprimary {
   color: $homeprimary !important;
+  margin-bottom: 50px !important;
+}
+
+.text-homesecondary {
+  color: $homesecondary!important;
   margin-bottom: 50px !important;
 }
 
@@ -2196,4 +2201,12 @@ html {
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
+}
+
+.navbar-nav .nav-link {
+  color: $black !important;
+}
+
+a.text-danger:hover, a.text-danger:focus {
+  color: $primary !important;
 }

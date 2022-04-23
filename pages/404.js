@@ -11,7 +11,8 @@ const ErrorPage = () => {
           name="Sharity"
           content="The page you are looking for is not found go back to the homepage"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
       </Head>
       <Container>
         <Row className="justify-content-center">

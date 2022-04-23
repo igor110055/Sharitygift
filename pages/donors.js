@@ -24,9 +24,9 @@ export default function Donors() {
       </Head>
       <div className="p-t-102">
         
-        <GeneralBanner title="Leading the Way in Crypto Donations" />
+        {/* <GeneralBanner title="Leading the Way in Crypto Donations" /> */}
         <SubInfobar />
-        <Submenu2 />
+        {/* <Submenu2 /> */}
         <div className="spacer">
             <Container>
                 <Row>
@@ -34,7 +34,7 @@ export default function Donors() {
                         <h3 className="midtitle text-black" style={{lineHeight: 1.5}}><b>Because of the blockchain&apos;s capacity, crypto donations are highly organized and easily traceable. You can be confident that every dollar you provide will go directly to the charity of your choosing.</b></h3>
                         <p className="p-t-20">
                             <Link href="/explorer">
-                                <a className="btn btn-md m-t-20 btn-alternate  p-r-40 p-l-40 p-t-10 p-b-10">
+                                <a className="btn btn-md m-t-20 btn-primary  p-r-40 p-l-40 p-t-10 p-b-10">
                                     <span className="m-t-10">Make a Donation</span>
                                 </a>
                             </Link>
@@ -196,7 +196,7 @@ export default function Donors() {
                         <p className="text-black p-t-10">
                             Sharity makes Ethereum and other cryptocurrency fundraising easy for nonprofits. Empowering mission-driven organizations, charities, universities, and faith-based organizations of all sizes to leverage crypto technology to achieve their mission. Discover why cryptocurrency is the fastest growing donation method for Millennial and Gen-Z donors.
                         </p>
-                        <div className="text-black p-t-10">
+                        {/* <div className="text-black p-t-10">
                             <ul>
                                 <li>Website: <Link href="https://sharitytoken.com" target="_blank" rel="noreferrer"><a>https://sharitytoken.com</a></Link></li>
                                 <li>Twitter: <Link href="#"><a style={{overflowWrap: "anywhere"}}>https://twitter.com/sharity</a></Link></li>
@@ -205,7 +205,7 @@ export default function Donors() {
                                 <li>Instagram: <Link href="#"><a>@sharity</a></Link></li>
                                 <li>YouTube: <Link href="#"><a>@sharity</a></Link></li>
                             </ul>
-                        </div>
+                        </div> */}
                     </Col>
                 </Row>
             </Container>
