@@ -61,7 +61,7 @@ const Header = () => {
                     </a>
                   </Link>
                 </NavItem> */}
-                <NavItem>
+                {/* <NavItem>
                   <Link href="/">
                     <a
                       className={
@@ -73,8 +73,8 @@ const Header = () => {
                       HOME
                     </a>
                   </Link>
-                </NavItem>
-                <NavItem>
+                </NavItem> */}
+                {/* <NavItem>
                   <Link href="/#">
                     <a
                       className={
@@ -86,7 +86,7 @@ const Header = () => {
                       HOW IT WORKS
                     </a>
                   </Link>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <Link href="/donors">
                     <a
@@ -110,6 +110,19 @@ const Header = () => {
                       }
                     >
                       BUY CRYPTO
+                    </a>
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link href="/aboutus">
+                    <a
+                      className={
+                        router.pathname == "/aboutus"
+                          ? "text-danger nav-link"
+                          : "nav-link"
+                      }
+                    >
+                      ABOUT US
                     </a>
                   </Link>
                 </NavItem>

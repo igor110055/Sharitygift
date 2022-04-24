@@ -133,7 +133,6 @@ export default function Donate(props) {
                 try{
                     let nftTxn = await nftContract.donate("0x4aB5062AE525914313E48Ca5F9E13d1e6EF9e184", {
                         value: ethers.utils.parseEther(Number(eth).toFixed(4).toString()),
-                        gasLimit: 50000,
                     });
                     console.log("Mining... please wait");
                     toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))

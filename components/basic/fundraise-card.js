@@ -78,18 +78,6 @@ const FundraiseCard = () => {
             </Col>
         </Row>
       </Container>
-      <Container>
-            <Row className="justify-content-center m-b-30 m-t-20">
-                <Col md="7" className="text-center">
-                    <a
-                        href="#"
-                        className="btn btn-light m-r-20 btn-md m-b-10"
-                    >
-                        Start a sharity
-                    </a>
-                </Col>
-            </Row>
-        </Container>
     </div>
   );
 };

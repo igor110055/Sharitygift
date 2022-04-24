@@ -9,10 +9,12 @@ const Banner2 = () => {
     <div className="static-slider-head banner2 m-b-30">
       <Container>
         <Row className="">
-          <Col lg="6" md="6" className="align-self-center">
+          <Col lg="12" md="12" className="align-self-center">
             <h1 className="text-homeprimary m-t-0 font-weight-bold">
             The Presence of Crypto Giving
             </h1>
+          </Col>
+          <Col lg="6" md="6" className="align-self-center">
             <div className="home-banner-1">
               <h4 className="subtitle font-light description-homeprimary">
                 Donate to your favorite charities, organization, and non profits quickly, safely and efficiently.
@@ -32,8 +34,22 @@ const Banner2 = () => {
               </Link>
             </div>
           </Col>
-          <Col lg="6" md="6" className="m-b-40">
-            <Image src={bannerimg} alt="sharity banner" />
+          <Col lg="6" md="6" className="align-self-center">
+            {/* <Image src={bannerimg} alt="sharity banner" /> */}
+            <div className="home-banner-2">
+              <h4 className="subtitle font-light description-homeprimary">
+                Donate to your favorite charities, organization, and non profits quickly, safely and efficiently.
+                <br />Gain favorable tax breaks, while contributing with crypto.
+              </h4>
+              <p className="m-t-20"></p>
+              <Link href="/partnership">
+                <a
+                  className="btn btn-home-secondary-light m-r-40 btn-md m-t-30 "
+                >
+                  Partnership
+                </a>
+              </Link>
+            </div>
           </Col>
         </Row>
       </Container>

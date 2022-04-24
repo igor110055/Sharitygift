@@ -9,74 +9,24 @@ import logo from "../../assets/images/logos/newshari.png";
 const Footer = () => {
   return (
     <div className="footer4 m-t-20 b-t">
-      <Container className="m-t-40">
+      <Container className="m-t-10">
         <Row>
-          <Col lg="4" md="12" className="m-b-30">
-            <Image src={logo} alt="wrapkit" width={90} height={90} />
-            <p className="text-black">OurStudio is a digital agency UI / UX Design and Website Development located in Ohio, United States of America</p>
-          </Col>
-          <Col lg="2" md="4" className="m-b-30 m-t-30">
-            <h5 className="m-b-20 boldcontent"><b>Fundraiser For</b></h5>
-            <p>
-              <Link href="#"><a className="link">Our Story</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Vision and mission</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Management</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Donation</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Blog</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Contact us</a></Link>
-            </p>
-          </Col>
-          <Col lg="2" md="4" className="m-b-30 m-t-30">
-            <h5 className="m-b-20 boldcontent"><b>Learn More</b></h5>
-            <p>
-              <Link href="#"><a className="link">Service</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Financial Reports</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Term and Condition</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">FAQs</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Partners</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Privacy</a></Link>
-            </p>
-          </Col>
-          <Col lg="2" md="4" className="m-t-30">
-            <h5 className="m-b-20 boldcontent"><b>Resources</b></h5>
-            <p>
-              <Link href="#"><a className="link">Service</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Financial Reports</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Term and Condition</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">FAQs</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Partners</a></Link>
-            </p>
-            <p>
-              <Link href="#"><a className="link">Privacy</a></Link>
-            </p>
+          <Col lg="12" md="12">
+            <Row>
+              <Col lg={4} className="align-right"><Image src={logo} alt="wrapkit" width={90} height={90} />
+              </Col>
+              <Col lg={8}>
+                <p className="text-black m-b-0 p-t-30">
+                  <Link href="#" ><a className="text-black p-r-20">About</a></Link>&nbsp;&nbsp;
+                  <Link href="#"><a className="text-black p-r-20">Donor</a></Link>&nbsp;&nbsp;
+                  <Link href="#"><a className="text-black p-r-20">Partner</a></Link>&nbsp;&nbsp;
+                  <Link href="#"><a className="text-black p-r-20">Terms</a></Link>&nbsp;&nbsp;
+                  <Link href="#"><a className="text-black p-r-20">Policy</a></Link>&nbsp;&nbsp;
+                  <Link href="#"><a className="text-black p-r-20">FAQ</a></Link>
+                </p>
+              </Col>
+            </Row>
+            
           </Col>
         </Row>
         <div className="f4-bottom-bar m-b-10">
