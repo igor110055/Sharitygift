@@ -131,7 +131,7 @@ export default function Donate(props) {
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
                 try{
-                    let nftTxn = await nftContract.donate("0x1640861ABB10F6C898de13e63aA58D433EE49f90", 5, {
+                    let nftTxn = await nftContract.donate("0x4aB5062AE525914313E48Ca5F9E13d1e6EF9e184", {
                         value: ethers.utils.parseEther(Number(eth).toFixed(4).toString())
                     });
                     console.log("Mining... please wait");
