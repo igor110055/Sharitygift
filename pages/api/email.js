@@ -13,20 +13,20 @@ export default function handler(req, res) {
     });
     
     try{
-        // client.send(
-        //     {
-        //         text: `Just for testing purpose`,
-        //         from: process.env.mail,
-        //         to: email,
-        //         subject: 'testing emailjs',
-        //     }
-        // )
-        const message = await client.sendAsync({
-            text: `Just for testing purpose`,
-            from: process.env.mail,
-            to: email,
-            subject: 'testing emailjs'
-        });
+        client.send(
+            {
+                text: `Just for testing purpose`,
+                from: process.env.mail,
+                to: email,
+                subject: 'testing emailjs',
+            }
+        )
+        // const message = await client.sendAsync({
+        //     text: `Just for testing purpose`,
+        //     from: process.env.mail,
+        //     to: email,
+        //     subject: 'testing emailjs'
+        // });
     }
     catch(e){
         res.status(400).end(JSON.stringify({ message:"Error" }))
