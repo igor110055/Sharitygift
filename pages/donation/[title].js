@@ -123,8 +123,8 @@ export default function Donate(props) {
             if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const { chainId } = await provider.getNetwork()
-                if(chainId !== 4){
-                    toast.error("Please make sure that you choose Rinkeby network on your wallet")
+                if(chainId !== 1){
+                    toast.error("Please make sure that you choose Ethereum mainnet on your wallet")
                     return
                 }
                 const signer = provider.getSigner();
@@ -135,7 +135,7 @@ export default function Donate(props) {
                         value: ethers.utils.parseEther(Number(eth).toFixed(4).toString())
                     });
                     console.log("Mining... please wait");
-                    toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://rinkeby.etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
+                    toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
                     saveTransaction(Number(eth).toFixed(4), nftTxn.hash)
                     await nftTxn.wait();
                 } catch ( err ) {

@@ -18,10 +18,6 @@
         {
           "name": "charityAddress",
           "type": "address"
-        },
-        {
-          "name": "taxPercent",
-          "type": "uint256"
         }
       ],
       "name": "donate",
@@ -34,18 +30,42 @@
       "constant": false,
       "inputs": [
         {
-          "name": "poolAddress",
-          "type": "address"
-        },
-        {
-          "name": "taxPercent",
+          "name": "newTaxPercent",
           "type": "uint256"
         }
       ],
-      "name": "officialDonate",
+      "name": "setTaxAddress",
       "outputs": [],
-      "payable": true,
-      "stateMutability": "payable",
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newTaxAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setTaxAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -74,6 +94,57 @@
         }
       ],
       "name": "Donation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousTaxAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newTaxAddress",
+          "type": "address"
+        }
+      ],
+      "name": "TaxAddressTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousPercentage",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "newPercentage",
+          "type": "uint256"
+        }
+      ],
+      "name": "TaxPercentageTransferred",
       "type": "event"
     },
     {
