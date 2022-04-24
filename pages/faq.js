@@ -33,7 +33,7 @@ export default function Faq() {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
-                                style={{backgroundColor: "red"}}
+                                style={{backgroundColor: "#F1D34D"}}
                             >
                             <Typography>How much does it cost to be listed on the Sharity App?</Typography>
                             </AccordionSummary>
@@ -48,6 +48,7 @@ export default function Faq() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2a-content"
                             id="panel2a-header"
+                            style={{backgroundColor: "#F1D34D"}}
                             >
                             <Typography>Are cryptocurrency donations recognized by the IRS?</Typography>
                             </AccordionSummary>
@@ -62,6 +63,7 @@ export default function Faq() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2a-content"
                             id="panel2a-header"
+                            style={{backgroundColor: "#F1D34D"}}
                             >
                             <Typography>Why donate cryptocurrency?</Typography>
                             </AccordionSummary>
@@ -76,6 +78,7 @@ export default function Faq() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2a-content"
                             id="panel2a-header"
+                            style={{backgroundColor: "#F1D34D"}}
                             >
                             <Typography>How do I receive my receipt?</Typography>
                             </AccordionSummary>

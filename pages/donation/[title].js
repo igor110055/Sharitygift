@@ -25,6 +25,7 @@ export default function Donate(props) {
     const [toggleToast, setToggle] = useState(true);
     const [currentAccount, setCurrentAccount] = useState(null);
     const [inputValues, setInputValues] = useState({});
+    const [receipt, setReceipt] = useState(false)
     // const countries = fetch("https://restcountries.com/v2/all")
     useEffect(async () => {
         const countries = await fetch("https://restcountries.com/v2/all")
@@ -98,10 +99,21 @@ export default function Donate(props) {
             console.log(err);
         }
     }
-
+    const acceptRequest = async () => {
+        toast.success("Your request accepted!");
+        setReceipt(true);
+    }
     const donateHandler = async () => {
         if(!anonym && (!inputValues['email'] || !inputValues['firstname'] || !inputValues['lastname'])){
             toast.error("Please input the information");
+            return;
+        }
+        if(anonym && !inputValues['email'] && receipt == false){
+            toast(<div>You are still able to write your email address to get receipt.<br></br><div className="text-right">
+                    <a onClick={() => { acceptRequest();}} href="#" >I don&apos;t need get receipt</a></div>
+                    </div>, {
+                icon: '❕',
+            })
             return;
         }
         checkWalletIsConnected()
@@ -207,7 +219,7 @@ export default function Donate(props) {
                         <Input type="text" className="form-control" name="lastname" required disabled={anonym} placeholder="Last Name&#42;" onChange={handleInputChange} value={inputValues['lastname'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-12">
-                        <Input type="text" className="form-control" name="email" required disabled={anonym} placeholder="Email&#42;" onChange={handleInputChange}  value={inputValues['email'] || ''} />
+                        <Input type="text" className="form-control" name="email" required placeholder="Email&#42;" onChange={handleInputChange}  value={inputValues['email'] || ''} />
                     </FormGroup>
                     <FormGroup className="col-md-12">
                         <Input type="select" name="country" required disabled={anonym} placeholder="Country" onChange={handleInputChange} value={inputValues['country'] || ''}  >

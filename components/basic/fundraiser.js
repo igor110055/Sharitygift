@@ -103,7 +103,7 @@ const Fundraiser = (props) => {
     </div>
   );
 };
-Fundraiser.propTypes = {
-    imgSrc: PropTypes.object.isRequired,
-};
+// Fundraiser.propTypes = {
+//     imgSrc: PropTypes.object.isRequired,
+// };
 export default Fundraiser;
