@@ -70,7 +70,7 @@ export default function Donate(props) {
             toast.error("Make sure you have Metamask installed!");
             return;
         } else {
-            console.log("Wallet exists! We're ready to go!");
+            console.log("Wallet exists! We're ready to go! ");
         }
 
         const accounts = await ethereum.request({ method: 'eth_accounts' });
