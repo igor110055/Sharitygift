@@ -61,14 +61,14 @@ const Footer = () => {
             <Col md="6" className="text-center">
               <div className="font-14">
                 <div className="m-t-5 m-b-5 copyright">
-                  <Link href="#">
-                    <a className="">Terms of Use | </a>
+                  <Link href="https://app.termly.io/document/terms-of-use-for-website/ae51a486-3455-4f2a-b8e0-23d84a1fe764">
+                    <a className="" target="_blank" rel="noreferrer">Terms of Use | </a>
                   </Link>
                   {/* <Link href="#">
                     <a className="">Legal Disclaimer | </a>
                   </Link> */}
-                  <Link href="#">
-                    <a className="">Privacy Policy </a>
+                  <Link href="https://app.termly.io/document/privacy-policy/ebd5b584-4310-4737-ace6-d90c258d8c87">
+                    <a className="" target="_blank" rel="noreferrer">Privacy Policy </a>
                   </Link>
                 </div>
               </div>
