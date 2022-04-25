@@ -14,12 +14,12 @@ const Footer = () => {
           <Col lg={12} className="text-center" style={{display: "flex", justifyContent: "center"}}>
               {/* <Image src={logo} alt="sharity" width={80} height={80} /> */}
               <p className="text-black m-b-0 p-t-30 p-l-35" style={{whiteSpace: "normal", lineBreak: "anywhere"}}>
-                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">About</a></Link>
+                <Link href="/aboutus"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">About</a></Link>
                 <Link href="/donors"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Donor</a></Link>
-                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Partner</a></Link>
-                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Terms</a></Link>
-                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Policy</a></Link>
-                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">FAQ</a></Link>
+                <Link href="/partnership"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Partner</a></Link>
+                <Link href="https://app.termly.io/document/terms-of-use-for-website/ae51a486-3455-4f2a-b8e0-23d84a1fe764" ><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20" target="_blank" rel="noreferrer">Terms</a></Link>
+                <Link href="https://app.termly.io/document/privacy-policy/ebd5b584-4310-4737-ace6-d90c258d8c87"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20" target="_blank" rel="noreferrer">Policy</a></Link>
+                <Link href="/faq"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">FAQ</a></Link>
               </p>
           </Col>
         </Row>

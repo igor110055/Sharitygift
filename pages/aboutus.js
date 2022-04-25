@@ -40,7 +40,7 @@ export default function Donors() {
                     <div className='player-wrapper'>
                       <ReactPlayer
                         className='react-player'
-                        url='https://www.youtube.com/watch?v=JvALKuVfBzM'
+                        url='https://studio.youtube.com/video/JvALKuVfBzM/edit'
                         width='100%'
                         height='100%'
                       />
