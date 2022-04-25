@@ -14,7 +14,7 @@ const Banner2 = () => {
             The Presence of Crypto Giving
             </h1>
           </Col>
-          <Col lg="6" md="6" className="align-self-center">
+          <Col lg="6" md="6" className="align-self-center p-b-10">
             <div className="home-banner-1">
               <h4 className="subtitle font-light description-homeprimary">
                 Donate to your favorite charities, organization, and non profits quickly, safely and efficiently.

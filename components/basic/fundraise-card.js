@@ -59,7 +59,7 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Secure</h4>
                 <p className="m-t-15 m-b-0">
-                    Each donation is secure and protected. It is important to donate and accept donations on our direct website to prevent potential scams.
+                    With our advanced blockchain technology, every donation is safe and secure.
                 </p>
             </Col>
             <Col lg="3" sm="6" xs="12" className="align-center p-4" >
@@ -71,9 +71,9 @@ const FundraiseCard = () => {
                 className="img-responsive img-rounded"
                 />
                 <p className="m-t-15 m-b-0"></p>
-                <h4 className="boldcontent">Social reach</h4>
+                <h4 className="boldcontent">Social Reach</h4>
                 <p className="m-t-15 m-b-0">
-                    Our mission is to bring awareness to your organization be allowing it to be viewed by perspective donors all over the world.
+                    Our mission is to bring awareness to your organization allowing it to be easily discovered by perspective donors all over the world.
                 </p>
             </Col>
         </Row>

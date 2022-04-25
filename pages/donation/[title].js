@@ -110,7 +110,7 @@ export default function Donate(props) {
         }
         if(anonym && !inputValues['email'] && receipt == false){
             toast(<div>You are still able to write your email address to get receipt.<br></br><div className="text-right">
-                    <a onClick={() => { acceptRequest();}} href="#" >I don&apos;t need get receipt</a></div>
+                    <a onClick={() => { acceptRequest();}} href="#" >I don&apos;t need to get a receipt</a></div>
                     </div>, {
                 icon: '❕',
             })

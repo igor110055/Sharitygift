@@ -11,26 +11,20 @@ const Footer = () => {
     <div className="footer4 m-t-20 b-t">
       <Container className="m-t-10">
         <Row>
-          <Col lg="12" md="12">
-            <Row>
-              <Col lg={4} className="align-right"><Image src={logo} alt="wrapkit" width={90} height={90} />
-              </Col>
-              <Col lg={8}>
-                <p className="text-black m-b-0 p-t-30">
-                  <Link href="#" ><a className="text-black p-r-20">About</a></Link>&nbsp;&nbsp;
-                  <Link href="#"><a className="text-black p-r-20">Donor</a></Link>&nbsp;&nbsp;
-                  <Link href="#"><a className="text-black p-r-20">Partner</a></Link>&nbsp;&nbsp;
-                  <Link href="#"><a className="text-black p-r-20">Terms</a></Link>&nbsp;&nbsp;
-                  <Link href="#"><a className="text-black p-r-20">Policy</a></Link>&nbsp;&nbsp;
-                  <Link href="#"><a className="text-black p-r-20">FAQ</a></Link>
-                </p>
-              </Col>
-            </Row>
-            
+          <Col lg={12} className="text-center" style={{display: "flex", justifyContent: "center"}}>
+              {/* <Image src={logo} alt="sharity" width={80} height={80} /> */}
+              <p className="text-black m-b-0 p-t-30 p-l-35" style={{whiteSpace: "normal", lineBreak: "anywhere"}}>
+                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">About</a></Link>
+                <Link href="/donors"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Donor</a></Link>
+                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Partner</a></Link>
+                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Terms</a></Link>
+                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">Policy</a></Link>
+                <Link href="/#"><a style={{whiteSpace: "nowrap"}} className="text-black p-r-20">FAQ</a></Link>
+              </p>
           </Col>
         </Row>
         <div className="f4-bottom-bar m-b-10">
-          <Row className="justify-content-center m-b-10">
+          {/* <Row className="justify-content-center m-b-10">
             <Col md="6" className="text-center">
               <div className="font-25">
                 <div className="round-social light">
@@ -62,7 +56,7 @@ const Footer = () => {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
           <Row className="justify-content-center m-b-10">
             <Col md="6" className="text-center">
               <div className="font-14">
@@ -70,9 +64,9 @@ const Footer = () => {
                   <Link href="#">
                     <a className="">Terms of Use | </a>
                   </Link>
-                  <Link href="#">
+                  {/* <Link href="#">
                     <a className="">Legal Disclaimer | </a>
-                  </Link>
+                  </Link> */}
                   <Link href="#">
                     <a className="">Privacy Policy </a>
                   </Link>
@@ -84,7 +78,7 @@ const Footer = () => {
           <Row className="justify-content-center m-b-20">
             <Col md="6" className="text-center">
               <div className="font-14">
-                <div className="m-t-5 m-b-5 copyright">
+                <div className="m-t-5 m-b-5 copyright m-l-10">
                   All Rights Reserved by{" "}
                   <Link href="#">
                     <a className="link p-10 p-l-0">Sharity</a>

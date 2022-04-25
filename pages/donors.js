@@ -25,7 +25,7 @@ export default function Donors() {
       <div className="p-t-102">
         
         {/* <GeneralBanner title="Leading the Way in Crypto Donations" /> */}
-        <SubInfobar />
+        <SubInfobar title="Support a charity or non-profit by donating crypto today!" description="The Sharity donation platform is an easy-to-use and specially organized list of over 1400 charities &amp; causes that users can donate crypto to with the click of a button! Find the cause that you want to be a part of and donate safely, simply, and securely today!" />
         {/* <Submenu2 /> */}
         <div className="spacer">
             <Container>
