@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -19,21 +19,45 @@ import {
   DropdownItem,
 } from "reactstrap";
 import logo from "../../assets/images/logos/newshari.png";
-import { useEffect } from "react/cjs/react.production.min";
+// import { useEffect } from "react/cjs/react.production.min";
 
 import transakSDK from "@transak/transak-sdk";
 
-const settings = {
-    apiKey: '90305d9b-ed39-465d-b9c9-e37922bad820',  // Your API Key
-    environment: 'PRODUCTION', // STAGING/PRODUCTION
-    defaultCryptoCurrency: 'ETH',
-    themeColor: 'ed6a5a', // App theme color
-    hostURL: 'https://sharity-donation.vercel.app',
-    widgetHeight: "700px",
-    widgetWidth: "250px",
-}
+const openTransak = (width) => {
+  let settings = {};
+  if(width > 600){
+    settings = {
+      apiKey: 'b9210d34-a584-4161-a7da-5ca836d1a392',  // Your API Key
+      environment: 'STAGING', // STAGING/PRODUCTION
+      defaultCryptoCurrency: 'ETH',
+      themeColor: 'ed6a5a', // App theme color
+      hostURL: 'https://sharity-donation.vercel.app',
+      widgetHeight: "700px",
+      widgetWidth: "500px",
+    }
+  } else if(width > 400){
+    settings = {
+      apiKey: 'b9210d34-a584-4161-a7da-5ca836d1a392',  // Your API Key
+      environment: 'STAGING', // STAGING/PRODUCTION
+      defaultCryptoCurrency: 'ETH',
+      themeColor: 'ed6a5a', // App theme color
+      hostURL: 'https://sharity-donation.vercel.app',
+      widgetHeight: "700px",
+      widgetWidth: "350px",
+    }
+  } else {
+    settings = {
+      apiKey: 'b9210d34-a584-4161-a7da-5ca836d1a392',  // Your API Key
+      environment: 'STAGING', // STAGING/PRODUCTION
+      defaultCryptoCurrency: 'ETH',
+      themeColor: 'ed6a5a', // App theme color
+      hostURL: 'https://sharity-donation.vercel.app',
+      widgetHeight: "700px",
+      widgetWidth: "270px",
+    }
+  }
+  
 
-const openTransak = () => {
   const transak = new transakSDK(settings);
 
   transak.init();
@@ -59,13 +83,21 @@ const openTransak = () => {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [width, setWidth] = useState();
   const router = useRouter();
   const toggle = () => setIsOpen(!isOpen);
 
   const { user, error, isLoading } = useUser();
-
+  useEffect(() => {
+    if(typeof window !== 'undefined'){
+      setWidth(window.innerWidth);
+    }
+  }, []);
   if (isLoading) return <div></div>;
   if (error) return <div>{error.message}</div>;
+
+  
+
   return (
     <div className="topbar" id="top">
       <div className="header6">
@@ -144,7 +176,7 @@ const Header = () => {
                           ? "text-danger nav-link"
                           : "nav-link"
                       }
-                      onClick={() => openTransak()}
+                      onClick={() => openTransak(width)}
                     >
                       BUY CRYPTO
                     </a>
