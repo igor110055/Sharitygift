@@ -41,8 +41,6 @@ export default function Donors() {
                       <ReactPlayer
                         className='react-player'
                         url='https://youtu.be/JvALKuVfBzM'
-                        width='100%'
-                        height='100%'
                       />
                     </div>
                     </Col>
