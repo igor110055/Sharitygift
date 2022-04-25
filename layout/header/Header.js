@@ -24,13 +24,13 @@ import { useEffect } from "react/cjs/react.production.min";
 import transakSDK from "@transak/transak-sdk";
 
 const settings = {
-    apiKey: 'b9210d34-a584-4161-a7da-5ca836d1a392',  // Your API Key
-    environment: 'STAGING', // STAGING/PRODUCTION
+    apiKey: '90305d9b-ed39-465d-b9c9-e37922bad820',  // Your API Key
+    environment: 'PRODUCTION', // STAGING/PRODUCTION
     defaultCryptoCurrency: 'ETH',
     themeColor: 'ed6a5a', // App theme color
     hostURL: 'https://sharity-donation.vercel.app',
     widgetHeight: "700px",
-    widgetWidth: "500px",
+    widgetWidth: "250px",
 }
 
 const openTransak = () => {

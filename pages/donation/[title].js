@@ -259,7 +259,7 @@ export default function Donate(props) {
                             <Input type="number" className="form-control" id="usd" required placeholder={ethusd?"USD":"ETH"} onChange={ethusd?handleUsdChange:handleEthChange} onFocus={handleFocus} value={ethusd?usd:eth} />
                         </InputGroup>
                     </FormGroup>
-                    <FormGroup className="col-md-10">
+                    <FormGroup className="col-md-12">
                         <hr />
                         <InputGroup>
                             <InputGroupText>
@@ -269,9 +269,9 @@ export default function Donate(props) {
                         </InputGroup>
                         
                     </FormGroup>
-                    <FormGroup className="col-md-2 p-l-0">
+                    {/* <FormGroup className="col-md-2 p-l-0">
                         <Button type="button" className="btn btn-icon waves-effect waves-light" onClick={() => setDirection(1-ethusd)}><i className="fa fa-sort"></i></Button>
-                    </FormGroup>
+                    </FormGroup> */}
                     {!currentAccount ? <FormGroup className="col-md-12">
                         <Button type="button" className="btn btn-icon waves-effect waves-light" onClick={connectWalletHandler} >Connect Wallet</Button>
                     </FormGroup>: ""}
