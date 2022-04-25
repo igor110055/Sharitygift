@@ -38,13 +38,12 @@ const Banner2 = () => {
             {/* <Image src={bannerimg} alt="sharity banner" /> */}
             <div className="home-banner-2">
               <h4 className="subtitle font-light description-homeprimary">
-                Donate to your favorite charities, organization, and non profits quickly, safely and efficiently.
-                <br />Gain favorable tax breaks, while contributing with crypto.
+                Our team welcomes charities of all sizes to partner with us so that we can help raise funds with cryptocurrency and expose your cause to a larger demographic.
               </h4>
-              <p className="m-t-20"></p>
+              <p className="m-t-0"></p>
               <Link href="/partnership">
                 <a
-                  className="btn btn-home-secondary-light m-r-40 btn-md m-t-30 "
+                  className="btn btn-home-secondary-light m-r-40 btn-md m-t-20 "
                 >
                   Partnership
                 </a>
