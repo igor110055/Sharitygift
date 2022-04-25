@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "reactstrap";
-import Image from "next/image";
-import fundraisingimg from "../../assets/images/landingpage/fundraising.jpg";
-import IconCard from "../basic/icon-card";
+
+import ReactPlayer from 'react-player/lazy';
 
 const Banner3 = () => {
   return (
@@ -33,17 +32,13 @@ const Banner3 = () => {
               className="img-responsive img-thumbnail"
             /> */}
             <div className="home-banner-2">
-              <h4 className="subtitle font-light description-homeprimary">
-                Donate to your favorite charities, organization, and non profits quickly, safely and efficiently.
-                <br />Gain favorable tax breaks, while contributing with crypto.
-              </h4>
-              <Link href="/partnership">
-                <a
-                  className="btn btn-home-secondary-light m-r-40 btn-md m-t-30 "
-                >
-                  Partnership
-                </a>
-              </Link>
+              <ReactPlayer
+                        className='react-player'
+                        url='https://youtu.be/JvALKuVfBzM'
+                        volume={0}
+                        muted={true}
+                        loop={true}
+              />
             </div>
           </Col>
         </Row>
