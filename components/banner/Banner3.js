@@ -28,6 +28,8 @@ const Banner3 = () => {
                         volume={0}
                         muted={true}
                         playing={true}
+                        width="100%"
+                        height={310}
                         loop={true}
               />
             </div>
