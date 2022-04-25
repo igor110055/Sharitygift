@@ -27,6 +27,7 @@ const Banner3 = () => {
                         url='https://youtu.be/JvALKuVfBzM'
                         volume={0}
                         muted={true}
+                        playing={true}
                         loop={true}
               />
             </div>

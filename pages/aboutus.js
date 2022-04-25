@@ -42,6 +42,7 @@ export default function Donors() {
                         className='react-player'
                         url='https://youtu.be/JvALKuVfBzM'
                         volume={1}
+                        muted={true}
                         controls={true}
                       />
                     </div>
