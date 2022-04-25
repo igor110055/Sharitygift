@@ -35,7 +35,7 @@ const Fundraiser = (props) => {
                     <p>{props.title}</p>
                 </h5>
                 <p className="m-b-0 font-14">{props.buttonShow && description!=""?truncate(description, 350, true):description}</p>
-                <Row>
+                {/* <Row>
                     <Col md={9} sm={9} xs={9}>
                         <ReactSlider
                             className="horizontal-slider"
@@ -58,7 +58,7 @@ const Fundraiser = (props) => {
                         <span className="font-16"><b>Raised</b></span><br />
                         <p className="font-18 text-secondary"><b>$2,100</b></p>
                     </Col>
-                </Row>
+                </Row> */}
                 {props.buttonShow?<Row>
                     <Col md={6} sm={6} xs={6} style={{paddingTop: 6}}>
                         <a className="social-donate" target="_blank" rel="noreferrer" href={"https://facebook.com/"+props.facebookUrl} >
