@@ -43,6 +43,8 @@ export default function Donors() {
                         url='https://youtu.be/JvALKuVfBzM'
                         volume={1}
                         muted={true}
+                        width="100%"
+                        height={340}
                         controls={true}
                       />
                     </div>
