@@ -27,11 +27,11 @@ const Banner2 = () => {
                   Donate Crypto
                 </a>
               </Link>
-              <Link href="/#coming">
+              {/* <Link href="/#coming">
                 <a className="btn btn-md m-t-30 btn-home-link p-r-0 p-l-0">
                   <i className="fa fal fa-play-circle m-r-10 font-40" /> <span className="m-t-10">Watch How It Works</span>
                 </a>
-              </Link>
+              </Link> */}
             </div>
           </Col>
           <Col lg="6" md="6" className="align-self-center">

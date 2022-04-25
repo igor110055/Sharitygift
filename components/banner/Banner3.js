@@ -16,22 +16,12 @@ const Banner3 = () => {
             <h5 className="subcontent font-light" style={{lineHeight: 2}}>
                 Here at <b className="boldcontent">Sharity&apos;s Gift</b>, our mission is to make <b className="boldcontent">crypto giving simple.</b> We are creating a future where the gift of crypto donations becomes standard. Our platform provides <b className="boldcontent">convenience</b> for the crypto donor, and a <b className="boldcontent">secure solution</b> for the charity, non-profit, or organization to accept crypto donations <b className="boldcontent">safely.</b>
             </h5>
-            {/* <IconCard /> */}
             
-              Click <a
-                href="#"
-                className=""
-                style={{textDecoration: "underline"}}
-              >here</a> to learn more
             
           </Col>
           <Col lg="6" md="6" className="m-b-40">
-            {/* <Image
-              src={fundraisingimg}
-              alt="fundraising banner"
-              className="img-responsive img-thumbnail"
-            /> */}
-            <div className="home-banner-2">
+            
+            <div className="">
               <ReactPlayer
                         className='react-player'
                         url='https://youtu.be/JvALKuVfBzM'
