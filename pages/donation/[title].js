@@ -18,14 +18,18 @@ export default function Donate(props) {
     const [anonym, setAnonym] = useState(false);
     const [countries, setCountries] = useState(null);
     const [rate, setRate] = useState(0);
+    const [bnbrate, setBnbRate] = useState(0);
+    const [bnbethrate, setBnbEthRate] = useState(0);
     const [formdata, setFormData] = useState({});
     const [usd, setUSD] = useState(0);
     const [eth, setETH] = useState(0);
+    const [bnb, setBNB] = useState(0);
     const [ethusd, setDirection] = useState(true);
     const [toggleToast, setToggle] = useState(true);
     const [currentAccount, setCurrentAccount] = useState(null);
     const [inputValues, setInputValues] = useState({});
     const [receipt, setReceipt] = useState(false)
+    const [network, setNetwork] = useState("ETH")
     // const countries = fetch("https://restcountries.com/v2/all")
     useEffect(async () => {
         const countries = await fetch("https://restcountries.com/v2/all")
@@ -34,18 +38,21 @@ export default function Donate(props) {
         const rates = await fetch("https://api.coinbase.com/v2/exchange-rates?currency=ETH")
         const rate = await rates.json()
         setRate(rate.data.rates.USD)
+        const bnbrates = await fetch("https://api.coinbase.com/v2/exchange-rates?currency=BNB")
+        const bnbrate = await bnbrates.json()
+        setBnbRate(bnbrate.data.rates.USD)
+        setBnbEthRate(bnbrate.data.rates.ETH)
     }, []);
 
     const handleInputChange = (e) => {
         setInputValues({...inputValues, [e.target.name]: e.target.value})
         console.log(inputValues)
     }
-    const handleChange = (e) => {
-        console.log(e.target.value)
-        formdata[e.target.id] = e.target.value
-        formdata["usd"] = e.target.value * rate
-        console.log(formdata)
-        setFormData(formdata)
+    const changeNetwork = (e) => {
+        setNetwork(e.target.value)
+        setBNB(0)
+        setETH(0)
+        setUSD(0)
     }
     const handleEthChange = (e) => {
         setETH(e.target.value)
@@ -54,11 +61,17 @@ export default function Donate(props) {
     const handleUsdChange = (e) => {
         setUSD(e.target.value)
         setETH(e.target.value / rate)
+        setBNB(e.target.value / bnbrate)
     }
-    const saveTransaction = async (eth, txnhash) => {
+    const handleBnbChange = (e) => {
+        setBNB(e.target.value)
+        setUSD(e.target.value * bnbrate)
+        setETH(e.target.value * bnbethrate)
+    }
+    const saveTransaction = async (eth, txnhash, isBnb) => {
         const res = await fetch("/api/transaction", {
             method: 'post',
-            body: JSON.stringify({...inputValues, ...props, eth, txnhash})
+            body: JSON.stringify({...inputValues, ...props, eth, txnhash, isBnb})
         });
     }
     const handleFocus = (event) => event.target.select();
@@ -123,10 +136,58 @@ export default function Donate(props) {
             if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const { chainId } = await provider.getNetwork()
-                if(chainId !== 1){
+                if(usd == 0){
+                    toast.error("Input valid amount")
+                    return
+                }
+                if(chainId !== 1 && network == "ETH"){
                     toast.error("Please make sure that you choose Ethereum mainnet on your wallet")
                     return
                 }
+                if(chainId !== 56 && network == "BNB"){
+                    try {
+                        // check if the chain to connect to is installed
+                        await ethereum.request({
+                            method: 'wallet_switchEthereumChain',
+                            params: [{ chainId: '0x38' }], // chainId must be in hexadecimal numbers
+                        });
+                    } catch (error) {
+                        // This error code indicates that the chain has not been added to MetaMask
+                        // if it is not, then install it into the user MetaMask
+                        
+                        if (error.code === 4902) {
+                            try {
+                                await ethereum.request({
+                                    method: 'wallet_addEthereumChain',
+                                    params: [
+                                        {
+                                            chainId: '0x38',
+                                            rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                                            chainName: "Binance Smart Chain",
+                                            nativeCurrency: {
+                                                name: "Binance Smart Chain",
+                                                symbol: "BNB",
+                                                decimals: 8,
+                                            }
+                                        },
+                                    ],
+                                });
+                            } catch (addError) {
+                                console.error(addError)
+                                toast.error("Operation failed. Choose the Binance Smart Chain on your wallet")
+                                return
+                            }
+                        } else {
+                            console.error(error)
+                            toast.error("Operation failed. Choose the Binance Smart Chain on your wallet")
+                            return
+                        }
+                        
+                    }
+                    // toast.error("Please make sure that you choose Binance Smart Chain on your wallet")
+                    
+                }
+                
                 const signer = provider.getSigner();
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
@@ -135,16 +196,23 @@ export default function Donate(props) {
                         value: ethers.utils.parseEther(Number(eth).toFixed(4).toString()),
                     });
                     console.log("Mining... please wait");
-                    toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
-                    saveTransaction(Number(eth).toFixed(4), nftTxn.hash)
+                    if(chainId == 56){
+                        toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://www.bscscan.com/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
+                        saveTransaction(Number(bnb).toFixed(4), nftTxn.hash, true)
+                    } else {
+                        toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
+                        saveTransaction(Number(eth).toFixed(4), nftTxn.hash, false)
+                    }
                     await nftTxn.wait();
                 } catch ( err ) {
                     if(err.code == "INSUFFICIENT_FUNDS"){
-                        toast.error((<span>Insufficient fund. You can deposit <a href="#">here</a></span>))
+                        toast.error((<span>Insufficient fund. You can deposit by clicking Buy Crypto on menu bar</span>))
                     } else if(err.code == "UNPREDICTABLE_GAS_LIMIT"){
-                        toast.error('Unpredictable gas limit. Input valid amount')
+                        toast.error('Unpredictable gas limit. Input valid amount.')
                     } else if(err.code == "4001"){
-                        toast.error("Transaction has been rejected")
+                        toast.error("Transaction has been rejected.")
+                    } else if(err.code == "-32603"){
+                        toast.error("Internal RPC Error. Make sure that you input valid amount and have sufficient balance.")
                     }
                     console.log(err)
                     // const code = err.data.replace('Reverted ','');
@@ -249,9 +317,18 @@ export default function Donate(props) {
             <Col md="3">
                 <Form className="row">
                     <FormGroup className="col-md-12">
+                        <Label htmlFor="eth">Donate by</Label>
+                    </FormGroup>
+                    <FormGroup className="col-md-11 m-b-28">
+                        <Input type="select" name="network" onChange={changeNetwork} value={network}>
+                            <option key="eth">ETH</option>
+                            <option key="bnb">BNB</option>
+                        </Input>
+                    </FormGroup>
+                    <FormGroup className="col-md-12">
                         <Label htmlFor="eth">Enter Amount</Label>
                     </FormGroup>
-                    <FormGroup className="col-md-10 m-b-0">
+                    <FormGroup className="col-md-11 m-b-0">
                         <InputGroup>
                             <InputGroupText>
                             {ethusd?"$":"ETH"}
@@ -259,16 +336,28 @@ export default function Donate(props) {
                             <Input type="number" className="form-control" id="usd" required placeholder={ethusd?"USD":"ETH"} onChange={ethusd?handleUsdChange:handleEthChange} onFocus={handleFocus} value={ethusd?usd:eth} />
                         </InputGroup>
                     </FormGroup>
-                    <FormGroup className="col-md-12">
-                        <hr />
-                        <InputGroup>
-                            <InputGroupText>
-                            {ethusd?"ETH":"$"}
-                            </InputGroupText>
-                            <Input type="number" className="form-control" id="eth" required placeholder={ethusd?"ETH":"USD"} onChange={ethusd?handleEthChange:handleUsdChange} onFocus={handleFocus} value={ethusd?eth:usd} />
-                        </InputGroup>
-                        
-                    </FormGroup>
+                    {network=="ETH"?<FormGroup className="col-md-11">
+                            <hr />
+                            <InputGroup>
+                                <InputGroupText>
+                                {ethusd?"ETH":"$"}
+                                </InputGroupText>
+                                <Input type="number" className="form-control" id="eth" required placeholder={ethusd?"ETH":"USD"} onChange={ethusd?handleEthChange:handleUsdChange} onFocus={handleFocus} value={ethusd?eth:usd} />
+                            </InputGroup>
+                            
+                        </FormGroup>: <FormGroup className="col-md-11">
+                            <hr />
+                            <InputGroup>
+                                <InputGroupText>
+                                {"BNB"}
+                                </InputGroupText>
+                                <Input type="number" className="form-control" id="bnb" required placeholder="BNB" onChange={handleBnbChange} onFocus={handleFocus} value={bnb} />
+                            </InputGroup>
+                            
+                        </FormGroup>
+                    }
+                    
+                   
                     {/* <FormGroup className="col-md-2 p-l-0">
                         <Button type="button" className="btn btn-icon waves-effect waves-light" onClick={() => setDirection(1-ethusd)}><i className="fa fa-sort"></i></Button>
                     </FormGroup> */}

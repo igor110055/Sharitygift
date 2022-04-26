@@ -44,7 +44,7 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Simple setup</h4>
                 <p className="m-t-15 m-b-0">
-                    Setting up an account is simple for both donor and organization.
+                    The process of creating an account is simple for both the donor and the organization.
                 </p>
             </Col>
             <Col lg="3" sm="6" xs="12" className="align-center p-4" >
@@ -72,7 +72,7 @@ const FundraiseCard = () => {
                 <p className="m-t-15 m-b-0"></p>
                 <h4 className="boldcontent">Social Reach</h4>
                 <p className="m-t-15 m-b-0">
-                    Our mission is to bring awareness to your organization allowing it to be easily discovered by perspective donors all over the world.
+                    Our mission is to make crypto donation simple. We help nonprofits introduce their cause to a new demographic, while providing tax benefits for the donor.
                 </p>
             </Col>
         </Row>

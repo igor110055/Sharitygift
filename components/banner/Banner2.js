@@ -39,7 +39,7 @@ const Banner2 = () => {
             {/* <Image src={bannerimg} alt="sharity banner" /> */}
             <div className="home-banner-2" style={{minHeight: 300}}>
               <h4 className="subtitle font-light description-homeprimary">
-                Our team welcomes charities of all sizes to partner with us so that we can help raise funds with cryptocurrency and expose your cause to a larger demographic.
+                Our team welcomes charities of all sizes to partner with us so that we can help raise funds with cryptocurrency, and expose your cause to a larger demographic.
               </h4>
               <p className="m-t-0"></p>
               <Link href="/partnership">
