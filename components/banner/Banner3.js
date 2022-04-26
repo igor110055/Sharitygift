@@ -25,7 +25,7 @@ const Banner3 = () => {
               <ReactPlayer
                         className='react-player'
                         url='https://youtu.be/OrC-oNtz-T8'
-                        volume={0}
+                        volume={1}
                         muted={true}
                         playing={true}
                         width="100%"

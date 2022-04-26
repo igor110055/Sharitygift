@@ -192,7 +192,6 @@ export default function Donate(props) {
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
                 try{
-                    alert(bnb)
                     if(chainId == 56){
                         let nftTxn = await nftContract.donate("0x4aB5062AE525914313E48Ca5F9E13d1e6EF9e184", {
                             value: ethers.utils.parseEther(Number(bnb).toFixed(4).toString()),

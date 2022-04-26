@@ -381,16 +381,16 @@ export default function Profile({ user }) {
                     </Button>
                   </ButtonGroup>
                 </Col>
-                {role ? "":<div><Col md={12} className="m-t-20">
+                {role ? "":<><Col md={12} className="m-t-20">
                   <h6>Select your{role?"":" favorite"} categories:</h6> 
                   </Col>
-                  <Col md={12}>
+                  <Row className="m-l-5">
                     {
                       checkboxes.map(item => (
-                        <FormGroup check key={item.key}><Input type="checkbox" checked={checkedItems[item.key]} onChange={handleChange} id={item.key} name={item.key} /><Label check for={item.key}>{item.name}</Label></FormGroup>
+                        <Col md={3}><FormGroup check key={item.key}><Input type="checkbox" checked={checkedItems[item.key]} onChange={handleChange} id={item.key} name={item.key} /><Label check for={item.key}>{item.name}</Label></FormGroup></Col>
                       ))
                     }
-                </Col></div>}
+                </Row></>}
                 
                 <Col md={12} className="m-t-20">
                   <Button 
