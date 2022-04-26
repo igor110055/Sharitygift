@@ -31,6 +31,7 @@ const Banner3 = () => {
                         width="100%"
                         height={310}
                         loop={true}
+                        controls={true}
               />
             </div>
           </Col>
