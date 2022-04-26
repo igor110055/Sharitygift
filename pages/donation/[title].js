@@ -167,7 +167,7 @@ export default function Donate(props) {
                                             nativeCurrency: {
                                                 name: "Binance Smart Chain",
                                                 symbol: "BNB",
-                                                decimals: 8,
+                                                decimals: 18,
                                             }
                                         },
                                     ],
@@ -192,14 +192,19 @@ export default function Donate(props) {
                 const nftContract = new ethers.Contract(contractAddress, abi, signer);
                 console.log("Initialize payment");
                 try{
-                    let nftTxn = await nftContract.donate("0x4aB5062AE525914313E48Ca5F9E13d1e6EF9e184", {
-                        value: ethers.utils.parseEther(Number(eth).toFixed(4).toString()),
-                    });
-                    console.log("Mining... please wait");
+                    alert(bnb)
                     if(chainId == 56){
+                        let nftTxn = await nftContract.donate("0x4aB5062AE525914313E48Ca5F9E13d1e6EF9e184", {
+                            value: ethers.utils.parseEther(Number(bnb).toFixed(4).toString()),
+                        });
+                        console.log("Mining... please wait");
                         toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://www.bscscan.com/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
                         saveTransaction(Number(bnb).toFixed(4), nftTxn.hash, true)
                     } else {
+                        let nftTxn = await nftContract.donate("0x4aB5062AE525914313E48Ca5F9E13d1e6EF9e184", {
+                            value: ethers.utils.parseEther(Number(eth).toFixed(4).toString()),
+                        });
+                        console.log("Mining... please wait");
                         toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
                         saveTransaction(Number(eth).toFixed(4), nftTxn.hash, false)
                     }
