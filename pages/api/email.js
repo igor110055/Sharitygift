@@ -1,6 +1,6 @@
-export default async function(req, res) {
-    
-    let nodemailer = require('nodemailer')
+import nodemailer from 'nodemailer'
+
+export default async (req, res) => {
     console.log(process.env.MAIL_PASSWORD)
     const transporter = nodemailer.createTransport({
       service: 'gmail',
