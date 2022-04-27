@@ -1,21 +1,29 @@
-import nodemailer from 'nodemailer'
+import emailjs from 'emailjs-com';
 
-export default async (req, res) => {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      host: 'smtp.gmail.com',
-      auth: {
-        user: 'jamesdream0724@gmail.com',
-        pass: process.env.MAIL_PASSWORD,
-      }
-    })
-    const mailData = {
-      from: "Sharity's Gift<jamesdream0724@gmail.com>",
-      to: req.body.email,
-      subject: `Thank you for your donation`,
-      text: "donation to "+req.body.title,
-      html: `${req.body.txhash}`
-    }
-    let info = await transporter.sendMail(mailData)
-    res.status(200)
+export default (req, res) => {
+    emailjs.send(
+        'service_5z247od',
+        'template_ljr01le',
+        {
+            name: "ddd",
+            hash: "0X8789EWd",
+            date: "dQQQd",
+            time: "ddd",
+            receiptId: "dsadadd",
+            AMOUNT: "dd",
+            toEmail: "jamesl.l90724@gmail.com",
+        },
+        'jona',
+    )
+    .then(({ status }) => {
+        if (status === 200) {
+            console.log('Message has been sent');
+        } else {
+            console.log('Unexpected status code returned from EmailJS, try again later');
+        }
+    }, (err) => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+        console.log("err occured");
+    });
 }
