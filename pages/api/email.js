@@ -6,7 +6,7 @@ export default async (req, res) => {
       service: 'gmail',
       auth: {
         user: 'jamesdream0724@gmail.com',
-        pass: "zxcv!@#7890",
+        pass: process.env.MAIL_PASSWORD,
       }
     })
     const mailData = {
