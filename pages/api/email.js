@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer'
 
 export default async (req, res) => {
-    console.log(process.env.MAIL_PASSWORD)
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       host: 'smtp.gmail.com',
@@ -10,6 +9,7 @@ export default async (req, res) => {
         pass: process.env.MAIL_PASSWORD,
       }
     })
+    console.log(req.body.email)
     const mailData = {
       from: 'jamesdream0724@gmail.com',
       to: req.body.email,
