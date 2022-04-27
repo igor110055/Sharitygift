@@ -95,9 +95,9 @@ const Fundraiser = (props) => {
                         <a className="social-donate" target="_blank" rel="noreferrer" href={"https://facebook.com/"+props.facebookUrl} >
                             <i className="fa fa-facebook" style={{fontSize: 16}}></i>
                         </a>&nbsp;
-                        <a className="social-heart" href="#" title={"Supporters: "+props.numSupport} >
+                        {/* <a className="social-heart" href="#" title={"Supporters: "+props.numSupport} >
                             <i className="fa fa-heart" style={{fontSize: 16}}></i>
-                        </a>
+                        </a> */}
                     </Col>
                 </Row>}
             </CardBody>
