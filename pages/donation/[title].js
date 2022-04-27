@@ -69,11 +69,10 @@ export default function Donate(props) {
         setETH(e.target.value * bnbethrate)
     }
     const saveTransaction = async (eth, txnhash, isBnb) => {
-        // const res = await fetch("/api/transaction", {
-        //     method: 'post',
-        //     body: JSON.stringify({...inputValues, ...props, eth, txnhash, isBnb})
-        // });
-        sendEmail()
+        const res = await fetch("/api/transaction", {
+            method: 'post',
+            body: JSON.stringify({...inputValues, ...props, eth, txnhash, isBnb})
+        });
     }
     const sendEmail = () => {
         emailjs.send(
@@ -103,25 +102,7 @@ export default function Donate(props) {
         });
     }
     const sendReceipt = async(tomail, title, txhash, amount) => {
-        const data = {
-            email: tomail,
-            title,
-            txhash,
-            amount
-        }
-        const res = await fetch('/api/email', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json, text/plain, */*',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          }).then((res) => {
-            console.log('Response received')
-            if (res.status === 200) {
-              console.log('Response succeeded!')
-            }
-          })
+        sendEmail()
     }
     const handleFocus = (event) => event.target.select();
 

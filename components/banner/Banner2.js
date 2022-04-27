@@ -15,7 +15,7 @@ const Banner2 = () => {
             </h1>
           </Col>
           <Col lg="6" md="6" className="align-self-center p-b-10 p-t-10">
-            <div className="home-banner-1" style={{minHeight: 300}}>
+            <div className="home-banner-1">
               <h4 className="subtitle font-light description-homeprimary">
                 Donate to your favorite charities, organization, and non profits quickly, safely and efficiently.
                 <br />Gain favorable tax breaks, while contributing with crypto.
@@ -37,7 +37,7 @@ const Banner2 = () => {
           <br></br>
           <Col lg="6" md="6" className="align-self-center">
             {/* <Image src={bannerimg} alt="sharity banner" /> */}
-            <div className="home-banner-2" style={{minHeight: 300}}>
+            <div className="home-banner-2">
               <h4 className="subtitle font-light description-homeprimary">
                 Our team welcomes charities of all sizes to partner with us so that we can help raise funds with cryptocurrency, and expose your cause to a larger demographic.
               </h4>
