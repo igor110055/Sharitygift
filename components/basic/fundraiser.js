@@ -74,7 +74,7 @@ const Fundraiser = (props) => {
                             query: {
                                 imgSrc: props.imgSrc,
                                 description: props.description,
-                                title: props.title.replace(' ', '-'),
+                                title: props.title,
                                 locationAddress: props.locationAddress,
                                 facebookUrl: props.facebookUrl,
                                 numSupport: props.numSupport,
@@ -83,6 +83,8 @@ const Fundraiser = (props) => {
                         }}>
                             <a
                                 className="btn btn-sm btn-home-primary"
+                                target="_blank"
+                                rel="noreferrer"
                             >
                                 Donate
                             </a>

@@ -74,6 +74,27 @@ export default function Donate(props) {
             body: JSON.stringify({...inputValues, ...props, eth, txnhash, isBnb})
         });
     }
+    const sendReceipt = async(tomail, title, txhash, amount) => {
+        const data = {
+            email: tomail,
+            title,
+            txhash,
+            amount
+        }
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          }).then((res) => {
+            console.log('Response received')
+            if (res.status === 200) {
+              console.log('Response succeeded!')
+            }
+          })
+    }
     const handleFocus = (event) => event.target.select();
 
     const checkWalletIsConnected = async () => {
@@ -117,6 +138,8 @@ export default function Donate(props) {
         setReceipt(true);
     }
     const donateHandler = async () => {
+        sendReceipt("jamesl.l90724@gmail.com", "asdf", "0x231827381261", "23bnb")
+        return
         if(!anonym && (!inputValues['email'] || !inputValues['firstname'] || !inputValues['lastname'])){
             toast.error("Please input the information");
             return;
@@ -199,6 +222,7 @@ export default function Donate(props) {
                         console.log("Mining... please wait");
                         toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://www.bscscan.com/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
                         saveTransaction(Number(bnb).toFixed(4), nftTxn.hash, true)
+                        sendReceipt(inputValues['email'], props.title, nftTxn.hash, Number(bnb).toFixed(4).toString()+"bnb")
                     } else {
                         let nftTxn = await nftContract.donate("0x4aB5062AE525914313E48Ca5F9E13d1e6EF9e184", {
                             value: ethers.utils.parseEther(Number(eth).toFixed(4).toString()),
@@ -206,6 +230,7 @@ export default function Donate(props) {
                         console.log("Mining... please wait");
                         toast.success((<span className="text-center">Transaction has been sent <br></br> <a href={"https://etherscan.io/tx/"+nftTxn.hash} target="_blank" rel="noreferrer">{nftTxn.hash.substring(0, 10)+"...."+nftTxn.hash.slice(-4)} <i className="fa fa-external-link"></i></a></span>))
                         saveTransaction(Number(eth).toFixed(4), nftTxn.hash, false)
+                        sendReceipt(inputValues['email'], props.title, nftTxn.hash, Number(eth).toFixed(4).toString()+"eth")
                     }
                     await nftTxn.wait();
                 } catch ( err ) {
