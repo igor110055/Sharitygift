@@ -9,13 +9,12 @@ export default async (req, res) => {
         pass: process.env.MAIL_PASSWORD,
       }
     })
-    console.log(__dirname)
     const mailData = {
       from: "Sharity's Gift<jamesdream0724@gmail.com>",
       to: req.body.email,
       subject: `Thank you for your donation`,
       text: "donation to "+req.body.title,
-      html: `HI`
+      html: `${req.body.txhash}`
     }
     let info = await transporter.sendMail(mailData)
     res.status(200)
