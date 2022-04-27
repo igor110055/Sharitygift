@@ -81,7 +81,7 @@ export default function Donate(props) {
             txhash,
             amount
         }
-        fetch('/api/contact', {
+        fetch('/api/email', {
             method: 'POST',
             headers: {
               'Accept': 'application/json, text/plain, */*',
