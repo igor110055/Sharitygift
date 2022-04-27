@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, {useState, useEffect} from "react";
 import { ethers } from 'ethers';
+import emailjs from "emailjs-com";
 import Link from "next/link";
 import { Row, Col, Container, Card, CardBody, Form, FormGroup, Label, Input, Button, InputGroup, InputGroupText, Toast, ToastBody, ToastHeader } from "reactstrap";
 import toast, { Toaster } from 'react-hot-toast';
