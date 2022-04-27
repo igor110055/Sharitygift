@@ -46,7 +46,7 @@ const Banner2 = () => {
                 <a
                   className="btn btn-home-secondary-light m-r-40 btn-md m-t-20 "
                 >
-                  Partnership
+                  Accept Crypto
                 </a>
               </Link>
             </div>

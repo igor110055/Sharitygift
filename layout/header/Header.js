@@ -271,7 +271,7 @@ const Header = () => {
                   <a className="btn btn-home-primary font-16 nav-link">Donate Crypto</a>
                 </Link>
                 <Link href="/partnership">
-                  <a className="btn btn-home-secondary font-16 nav-link">Become a Partner</a>
+                  <a className="btn btn-home-secondary font-16 nav-link">Accept Crypto</a>
                 </Link>
               </div>
             </Collapse>

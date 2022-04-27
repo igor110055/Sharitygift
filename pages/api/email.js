@@ -1,4 +1,4 @@
-export default function (req, res) {
+export default async function(req, res) {
     
     let nodemailer = require('nodemailer')
     console.log(process.env.MAIL_PASSWORD)
@@ -6,7 +6,7 @@ export default function (req, res) {
       service: 'gmail',
       auth: {
         user: 'jamesdream0724@gmail.com',
-        pass: process.env.MAIL_PASSWORD,
+        pass: "zxcv!@#7890",
       }
     })
     const mailData = {
@@ -17,11 +17,6 @@ export default function (req, res) {
       html: `<div>${req.body.txhash}</div><p>Sent from:
       ${req.body.email}</p>`
     }
-    transporter.sendMail(mailData, function (err, info) {
-      if(err)
-        console.log(err)
-      else
-        console.log(info)
-    })
+    let info = await transporter.sendMail(mailData)
     res.status(200)
 }
